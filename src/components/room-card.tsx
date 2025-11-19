@@ -27,69 +27,70 @@ const FridgeIcon = ({className}: {className?: string}) => (
 
 
 const amenityIcons: { [key: string]: React.ReactNode } = {
-  users: <Users className="h-4 w-4 text-muted-foreground" />,
-  wifi: <Wifi className="h-4 w-4 text-muted-foreground" />,
-  tv: <Tv className="h-4 w-4 text-muted-foreground" />,
-  bath: <Bath className="h-4 w-4 text-muted-foreground" />,
-  bed: <Bed className="h-4 w-4 text-muted-foreground" />,
-  balcony: <Building className="h-4 w-4 text-muted-foreground" />,
-  garden: <Trees className="h-4 w-4 text-muted-foreground" />,
-  sofa: <Sofa className="h-4 w-4 text-muted-foreground" />,
-  pool: <Waves className="h-4 w-4 text-muted-foreground" />,
-  wine: <Wine className="h-4 w-4 text-muted-foreground" />,
-  "air-vent": <AirVent className="h-4 w-4 text-muted-foreground" />,
-  fridge: <FridgeIcon className="h-4 w-4 text-muted-foreground" />,
-  default: <Users className="h-4 w-4 text-muted-foreground" />,
+  users: <Users className="h-4 w-4" />,
+  wifi: <Wifi className="h-4 w-4" />,
+  tv: <Tv className="h-4 w-4" />,
+  bath: <Bath className="h-4 w-4" />,
+  bed: <Bed className="h-4 w-4" />,
+  balcony: <Building className="h-4 w-4" />,
+  garden: <Trees className="h-4 w-4" />,
+  sofa: <Sofa className="h-4 w-4" />,
+  pool: <Waves className="h-4 w-4" />,
+  wine: <Wine className="h-4 w-4" />,
+  "air-vent": <AirVent className="h-4 w-4" />,
+  fridge: <FridgeIcon className="h-4 w-4" />,
+  default: <Users className="h-4 w-4" />,
 };
 
 export function RoomCard({ room }: { room: Room }) {
   return (
-    <Card className="flex flex-col overflow-hidden h-full">
-      <div className="relative w-full h-64">
+    <Card className="group relative flex flex-col overflow-hidden h-full shadow-lg transition-all hover:shadow-2xl">
+      <div className="relative w-full h-96">
         {room.images && room.images.length > 0 && (
           <Image
             src={room.images[0].imageUrl}
             alt={room.images[0].description}
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 50vw"
             data-ai-hint={room.images[0].imageHint}
           />
         )}
-      </div>
-      <CardHeader>
-        <CardTitle className="font-headline">{room.name}</CardTitle>
-        <div className="flex items-center gap-4 text-sm text-muted-foreground pt-2">
-            <div className="flex items-center gap-1">
-                <Users className="h-4 w-4" />
-                <span>Up to {room.capacity} guests</span>
-            </div>
-            <div className='flex items-center gap-2'>
-              {room.amenities.slice(0, 5).map((amenity) => (
-                <div key={amenity.name} className="flex items-center gap-1" title={amenity.name}>
-                  {typeof amenity.icon === 'string' ? amenityIcons[amenity.icon] || amenityIcons.default : amenity.icon}
-                </div>
-              ))}
-            </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+
+        <div className="absolute bottom-0 left-0 p-6 text-white">
+          <CardTitle className="font-headline text-3xl">{room.name}</CardTitle>
+          <CardDescription className="pt-2 text-white/90 line-clamp-2">{room.description}</CardDescription>
         </div>
-        <CardDescription className="pt-2">{room.description}</CardDescription>
-      </CardHeader>
-      <CardContent className="flex-grow">
-        <div className="flex flex-wrap gap-2">
-          {room.highlights.map((highlight) => (
-            <Badge key={highlight} variant="secondary">
-              {highlight}
-            </Badge>
+      </div>
+      
+      <CardContent className="flex-grow p-6 bg-card">
+        <div className="grid grid-cols-2 gap-4 text-sm text-muted-foreground">
+          {room.amenities.slice(0, 4).map((amenity) => (
+            <div key={amenity.name} className="flex items-center gap-2" title={amenity.name}>
+              {typeof amenity.icon === 'string' ? amenityIcons[amenity.icon] : amenity.icon}
+              <span className="truncate">{amenity.name}</span>
+            </div>
           ))}
         </div>
       </CardContent>
-      <CardFooter className="flex flex-wrap gap-2">
-        <Button asChild className="flex-grow">
-          <Link href={`/rooms/${room.slug}`}>View Details</Link>
-        </Button>
-        <Button asChild variant="secondary" className="flex-grow">
-          <Link href="/contact">Inquire Now</Link>
-        </Button>
+
+      <CardFooter className="p-6 pt-0 bg-card flex flex-col items-start gap-4">
+        <div className="flex flex-wrap gap-2">
+            {room.highlights.map((highlight) => (
+              <Badge key={highlight} variant="secondary">
+                {highlight}
+              </Badge>
+            ))}
+          </div>
+        <div className="w-full flex gap-2">
+          <Button asChild className="flex-grow">
+            <Link href={`/rooms/${room.slug}`}>View Details</Link>
+          </Button>
+          <Button asChild variant="secondary" className="flex-grow">
+            <Link href="/contact">Inquire Now</Link>
+          </Button>
+        </div>
       </CardFooter>
     </Card>
   );
