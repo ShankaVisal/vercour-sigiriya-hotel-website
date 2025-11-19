@@ -2,13 +2,35 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Leaf, Mountain, Wind, ArrowRight } from 'lucide-react';
+import { Leaf, Mountain, Wind, ArrowRight, Plane, Users, Wifi, Utensils, Waves } from 'lucide-react';
 import { RoomCard } from '@/components/room-card';
 import { rooms } from '@/lib/data';
 import { MapEmbed } from '@/components/map-embed';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero');
+
+// Inline SVG for laundry icon
+const LaundryIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="h-10 w-10 text-primary"
+  >
+    <path d="M15.2 9.4a2 2 0 1 0-2.8 2.8" />
+    <path d="M16 2a2 2 0 0 0-2 2v2" />
+    <path d="M4 8v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8" />
+    <path d="M4 14h16" />
+  </svg>
+);
+
 
 export default function Home() {
   const featuredRooms = rooms.slice(0, 2);
@@ -28,6 +50,39 @@ export default function Home() {
       icon: <Mountain className="h-10 w-10 text-primary" />,
       title: 'Close to Sigiriya Rock',
       description: 'We are located just a short distance from the iconic Sigiriya Rock Fortress and other major attractions.',
+    },
+  ];
+
+  const services = [
+    {
+      icon: <Plane className="h-10 w-10 text-primary" />,
+      title: 'Airport Pickup Service',
+      description: 'Upon request, we can arrange transportation from the airport, with charges applicable for this service.',
+    },
+    {
+      icon: <Users className="h-10 w-10 text-primary" />,
+      title: 'Housekeeper Services',
+      description: 'The hotel provides complimentary daily housekeeping services.',
+    },
+    {
+      icon: <Wifi className="h-10 w-10 text-primary" />,
+      title: 'Wifi',
+      description: 'We offer complimentary WiFi and internet access in all rooms and throughout the hotel premises.',
+    },
+    {
+      icon: <LaundryIcon />,
+      title: 'Laundry Services',
+      description: 'We offer laundry services at the hotel for a fee, with pricing determined on a per-item basis.',
+    },
+    {
+      icon: <Utensils className="h-10 w-10 text-primary" />,
+      title: 'Room Service',
+      description: 'Guests can access room service via WhatsApp. Additionally, food from the bar can be taken to your room.',
+    },
+    {
+      icon: <Waves className="h-10 w-10 text-primary" />,
+      title: 'Swimming Pool',
+      description: 'A pool featuring shaded areas is open to all hotel guests, offering a refreshing escape from the tropical heat.',
     },
   ];
 
@@ -70,6 +125,40 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* Essentials Section */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            {PlaceHolderImages.find(p => p.id === 'gallery9') && (
+              <Image 
+                src={PlaceHolderImages.find(p => p.id === 'gallery9')?.imageUrl ?? ''} 
+                alt={PlaceHolderImages.find(p => p.id === 'gallery9')?.description ?? ''}
+                width={600}
+                height={800}
+                className="w-full h-auto object-cover rounded-lg shadow-lg"
+                data-ai-hint={PlaceHolderImages.find(p => p.id === 'gallery9')?.imageHint ?? ''}
+              />
+            )}
+          </div>
+          <div>
+            <p className="text-sm uppercase tracking-widest text-muted-foreground">Discover the services we offer</p>
+            <h2 className="font-headline text-4xl md:text-5xl font-bold mt-2 mb-8">Essentials For Your Stay</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {services.map((service) => (
+                <div key={service.title} className="flex gap-4">
+                  <div>{service.icon}</div>
+                  <div>
+                    <h3 className="font-headline text-xl font-semibold">{service.title}</h3>
+                    <p className="mt-1 text-muted-foreground text-sm">{service.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Featured Rooms Section */}
       <section className="py-16 md:py-24 bg-secondary/30">
