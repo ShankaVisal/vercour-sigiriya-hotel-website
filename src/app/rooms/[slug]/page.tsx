@@ -95,7 +95,7 @@ export default function RoomPage({ params }: Props) {
                 <CarouselItem key={index}>
                   <Card className="overflow-hidden">
                     <CardContent className="p-0">
-                      <div className="aspect-w-16 aspect-h-9">
+                      <div className="relative h-96">
                         <Image
                           src={image.imageUrl}
                           alt={image.description}
