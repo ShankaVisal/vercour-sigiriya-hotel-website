@@ -7,7 +7,7 @@ import { DynamicContentGenerator } from '@/components/dynamic-content-generator'
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about the story of Nature Kabana Hotel, our eco-friendly mission, and the advantages of our unique location in Sigiriya.',
+  description: 'Learn about the story of Vercour Sigiriya, our eco-friendly mission, and the advantages of our unique location in Sigiriya.',
 };
 
 export default function AboutPage() {
@@ -19,7 +19,7 @@ export default function AboutPage() {
       {/* Page Header */}
       <section className="bg-secondary/30 py-16 md:py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">About Nature Kabana</h1>
+          <h1 className="font-headline text-4xl md:text-5xl font-bold">About Vercour Sigiriya</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Discover the heart and soul behind your favorite nature retreat in Sigiriya.
           </p>
@@ -33,7 +33,7 @@ export default function AboutPage() {
           <div className="order-2 md:order-1">
             <h2 className="font-headline text-3xl font-bold flex items-center gap-3"><Heart className="text-primary h-8 w-8"/>Our Story</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Nature Kabana was born from a dream to create a sanctuary where people could reconnect with nature without sacrificing comfort. Founded by a family of nature lovers, our hotel was built with a deep respect for the environment. Every stone, every piece of wood, and every plant has been carefully chosen to create a harmonious space that feels like a home away from home. We started with just a few cabanas and a big vision, and have grown thanks to the wonderful guests who share our passion for tranquility and sustainability.
+              Vercour Sigiriya was born from a dream to create a sanctuary where people could reconnect with nature without sacrificing comfort. Founded by a family of nature lovers, our hotel was built with a deep respect for the environment. Every stone, every piece of wood, and every plant has been carefully chosen to create a harmonious space that feels like a home away from home. We started with just a few cabanas and a big vision, and have grown thanks to the wonderful guests who share our passion for tranquility and sustainability.
             </p>
           </div>
           <div className="order-1 md:order-2">

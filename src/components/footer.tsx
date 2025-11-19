@@ -1,8 +1,10 @@
 import Link from 'next/link';
-import { Leaf, Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import { Button } from './ui/button';
 import { navLinks } from '@/lib/data';
 import { AGODA_URL, AIRBNB_URL, BOOKING_COM_URL, HOTEL_ADDRESS, HOTEL_EMAIL, HOTEL_PHONE } from '@/lib/constants';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Footer() {
   const bookingSites = [
@@ -17,6 +19,8 @@ export function Footer() {
     { icon: <Mail className="h-4 w-4" />, text: HOTEL_EMAIL, href: `mailto:${HOTEL_EMAIL}` },
   ];
 
+  const logo = PlaceHolderImages.find(p => p.id === 'logo');
+
   return (
     <footer className="bg-secondary/50 text-secondary-foreground">
       <div className="container mx-auto px-4 py-12 md:py-16">
@@ -24,8 +28,7 @@ export function Footer() {
           {/* About Section */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
-              <Leaf className="h-7 w-7 text-primary" />
-              <span className="font-bold font-headline text-xl">Nature Kabana</span>
+              {logo && <Image src={logo.imageUrl} alt={logo.description} width={140} height={40} className="w-36 h-auto" />}
             </Link>
             <p className="text-sm text-muted-foreground">
               Experience Nature & Comfort in the Heart of Sigiriya. Your tranquil escape awaits.
@@ -79,7 +82,7 @@ export function Footer() {
 
         </div>
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Nature Kabana Hotel. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Vercour Sigiriya. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

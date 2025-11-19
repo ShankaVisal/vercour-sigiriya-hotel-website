@@ -3,15 +3,18 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Leaf, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { navLinks } from '@/lib/data';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const logo = PlaceHolderImages.find(p => p.id === 'logo');
 
   const NavLinks = ({ className }: { className?: string }) => (
     <nav className={cn('flex items-center gap-6 text-sm font-medium', className)}>
@@ -22,7 +25,7 @@ export function Header() {
           onClick={() => setIsMobileMenuOpen(false)}
           className={cn(
             'transition-colors hover:text-primary',
-            pathname === link.href ? 'text-primary' : 'text-foreground/60'
+            pathname === link.href ? 'text-primary font-semibold' : 'text-foreground/70'
           )}
         >
           {link.label}
@@ -33,10 +36,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
-          <Leaf className="h-6 w-6 text-primary" />
-          <span className="font-bold font-headline text-lg">Nature Kabana</span>
+          {logo && <Image src={logo.imageUrl} alt={logo.description} width={140} height={40} className="w-36 h-auto" />}
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -58,8 +60,7 @@ export function Header() {
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between border-b pb-4">
                   <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Leaf className="h-6 w-6 text-primary" />
-                    <span className="font-bold font-headline">Nature Kabana</span>
+                    {logo && <Image src={logo.imageUrl} alt={logo.description} width={140} height={40} className="w-36 h-auto" />}
                   </Link>
                   <SheetTrigger asChild>
                     <Button variant="ghost" size="icon">

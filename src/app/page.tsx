@@ -48,7 +48,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
           <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-            Nature Kabana Hotel
+            Vercour Sigiriya
           </h1>
           <p className="mt-4 max-w-2xl text-lg md:text-xl">
             Experience Nature & Comfort in the Heart of Sigiriya
@@ -109,7 +109,7 @@ export default function Home() {
           <div>
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Your Gateway to Serenity</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Nestled amidst lush greenery, Nature Kabana Hotel offers a unique blend of rustic charm and modern comfort. Our commitment to eco-friendly practices ensures a stay that's not only relaxing but also in harmony with the environment.
+              Nestled amidst lush greenery, Vercour Sigiriya offers a unique blend of rustic charm and modern comfort. Our commitment to eco-friendly practices ensures a stay that's not only relaxing but also in harmony with the environment.
             </p>
             <Button asChild size="lg" className="mt-8">
               <Link href="/about">Learn More About Us</Link>

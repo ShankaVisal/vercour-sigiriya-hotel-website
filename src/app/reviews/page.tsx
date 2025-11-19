@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Guest Reviews',
-  description: 'Read what our guests have to say about their experience at Nature Kabana Hotel. Real reviews from travelers around the world.',
+  description: 'Read what our guests have to say about their experience at Vercour Sigiriya. Real reviews from travelers around the world.',
 };
 
 export default function ReviewsPage() {
@@ -15,7 +15,7 @@ export default function ReviewsPage() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-headline text-4xl md:text-5xl font-bold">Words From Our Guests</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            We are humbled by the kind words from our guests who have made Nature Kabana their home away from home.
+            We are humbled by the kind words from our guests who have made Vercour Sigiriya their home away from home.
           </p>
         </div>
       </section>

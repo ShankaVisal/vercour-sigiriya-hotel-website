@@ -1,6 +1,5 @@
 import type { Room, Attraction, Review, NavLink } from '@/lib/types';
 import { PlaceHolderImages } from './placeholder-images';
-import { Bath, Tv, Users, Wifi } from 'lucide-react';
 
 export const navLinks: NavLink[] = [
   { href: '/', label: 'Home' },
@@ -126,7 +125,7 @@ export const reviews: Review[] = [
     id: '2',
     name: 'Priya Sharma',
     country: 'India',
-    review: 'Nature Kabana is a hidden gem in Sigiriya. The location is perfect for exploring the main attractions, yet it feels so secluded and serene. The food was delicious, and their eco-friendly approach is commendable.',
+    review: 'Vercour Sigiriya is a hidden gem. The location is perfect for exploring the main attractions, yet it feels so secluded and serene. The food was delicious, and their eco-friendly approach is commendable.',
     avatar: PlaceHolderImages.find(p => p.id === 'avatar2'),
   },
   {

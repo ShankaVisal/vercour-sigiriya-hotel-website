@@ -12,7 +12,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Pricing & Rates',
-  description: 'View the room rates for our cabanas at Nature Kabana Hotel. Find pricing for all seasons and book your stay.',
+  description: 'View the room rates for our cabanas at Vercour Sigiriya. Find pricing for all seasons and book your stay.',
 };
 
 const pricingData = [

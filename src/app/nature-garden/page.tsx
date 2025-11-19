@@ -7,7 +7,7 @@ import { DynamicContentGenerator } from '@/components/dynamic-content-generator'
 
 export const metadata: Metadata = {
   title: 'Our Nature Garden',
-  description: 'Discover the serene nature garden at Nature Kabana Hotel. A place for relaxation, meditation, and reconnecting with the natural world.',
+  description: 'Discover the serene nature garden at Vercour Sigiriya. A place for relaxation, meditation, and reconnecting with the natural world.',
 };
 
 export default function NatureGardenPage() {
@@ -50,7 +50,7 @@ export default function NatureGardenPage() {
         <section className="text-center">
           <h2 className="font-headline text-3xl font-bold">A Serene Garden Experience</h2>
           <p className="mt-4 max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-            Our nature garden is the heart of Nature Kabana. More than just a collection of plants, it is a living, breathing ecosystem designed to soothe the soul and delight the senses. From the moment you step in, you'll be enveloped by the gentle rustle of leaves, the sweet fragrance of tropical flowers, and the symphony of birdsong. It is a space to wander, to wonder, and to find your inner peace.
+            Our nature garden is the heart of Vercour Sigiriya. More than just a collection of plants, it is a living, breathing ecosystem designed to soothe the soul and delight the senses. From the moment you step in, you'll be enveloped by the gentle rustle of leaves, the sweet fragrance of tropical flowers, and the symphony of birdsong. It is a space to wander, to wonder, and to find your inner peace.
           </p>
         </section>
 

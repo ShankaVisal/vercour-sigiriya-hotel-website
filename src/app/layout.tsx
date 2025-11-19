@@ -8,11 +8,11 @@ import { WhatsAppButton } from '@/components/whatsapp-button';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Nature Kabana Hotel – Sigiriya',
-    template: '%s | Nature Kabana Hotel – Sigiriya',
+    default: 'Vercour Sigiriya – Eco-Friendly Hotel',
+    template: '%s | Vercour Sigiriya',
   },
   description: 'Experience nature and comfort in the heart of Sigiriya. Eco-friendly cabanas in a peaceful environment, close to Sigiriya Rock.',
-  keywords: ['hotel', 'sigiriya', 'sri lanka', 'eco-friendly', 'nature resort', 'cabana', 'booking'],
+  keywords: ['hotel', 'sigiriya', 'sri lanka', 'eco-friendly', 'nature resort', 'cabana', 'booking', 'vercour'],
 };
 
 export default function RootLayout({

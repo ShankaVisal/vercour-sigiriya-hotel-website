@@ -8,7 +8,7 @@ import { BOOKING_COM_URL, AGODA_URL, AIRBNB_URL, HOTEL_ADDRESS, HOTEL_EMAIL, HOT
 
 export const metadata: Metadata = {
   title: 'Contact & Booking',
-  description: 'Get in touch with Nature Kabana Hotel for inquiries and bookings. Find our location and contact details, or book through our partner sites.',
+  description: 'Get in touch with Vercour Sigiriya for inquiries and bookings. Find our location and contact details, or book through our partner sites.',
 };
 
 export default function ContactPage() {

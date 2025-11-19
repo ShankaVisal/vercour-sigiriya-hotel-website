@@ -21,7 +21,7 @@ export default function GalleryPage() {
       <div className="container mx-auto px-4 text-center">
         <h1 className="font-headline text-4xl md:text-5xl font-bold">Gallery</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          A glimpse into the serene beauty of Nature Kabana Hotel and its surroundings.
+          A glimpse into the serene beauty of Vercour Sigiriya and its surroundings.
         </p>
       </div>
     </section>
