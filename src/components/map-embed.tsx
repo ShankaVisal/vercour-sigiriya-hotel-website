@@ -11,7 +11,7 @@ export function MapEmbed() {
         allowFullScreen={true}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-        title="Nature Kabana Hotel Location"
+        title="Vercour Sigiriya Hotel Location"
       ></iframe>
     </div>
   );
