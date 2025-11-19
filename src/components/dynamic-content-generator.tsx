@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/accordion"
 
 type DynamicContentGeneratorProps = {
-  sectionName: 'About Us' | 'Nature Garden' | 'Things To Do';
+  sectionName: 'About Us' | 'Nature Garden';
 };
 
 export function DynamicContentGenerator({ sectionName }: DynamicContentGeneratorProps) {
@@ -43,6 +43,8 @@ export function DynamicContentGenerator({ sectionName }: DynamicContentGenerator
       setIsLoading(false);
     }
   };
+
+  if (sectionName === 'Things To Do') return null;
 
   return (
     <Accordion type="single" collapsible className="w-full mt-12">

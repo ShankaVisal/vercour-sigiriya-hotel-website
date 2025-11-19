@@ -76,10 +76,23 @@ export default function RoomPage({ params }: Props) {
   return (
     <>
       {/* Page Header */}
-      <section className="bg-secondary/30 py-16 md:py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">{room.name}</h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+      <section className="relative h-[50vh] w-full">
+        {room.images.length > 0 && (
+            <Image
+              src={room.images[0].imageUrl}
+              alt={room.images[0].description}
+              fill
+              className="object-cover"
+              priority
+              data-ai-hint={room.images[0].imageHint}
+            />
+        )}
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
+          <h1 className="font-headline text-4xl md:text-6xl font-bold">
+            {room.name}
+          </h1>
+          <p className="mt-4 max-w-2xl text-lg">
             {room.description}
           </p>
         </div>

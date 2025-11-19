@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/
 import { Card, CardContent } from '@/components/ui/card';
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 // Metadata for SEO is handled in a separate page.tsx if this were a server component,
 // but since it needs state, we'll assume it's set in a parent layout or a metadata-only file.
@@ -15,18 +16,32 @@ import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<ImagePlaceholder | null>(null);
+  const heroImage = PlaceHolderImages.find(p => p.id === 'gallery1');
 
   return (
     <>
     {/* Page Header */}
-    <section className="bg-secondary/30 py-16 md:py-20">
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="font-headline text-4xl md:text-5xl font-bold">Gallery</h1>
-        <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          A glimpse into the serene beauty of Vercour Sigiriya and its surroundings.
-        </p>
-      </div>
-    </section>
+    <section className="relative h-[50vh] w-full">
+        {heroImage && (
+            <Image
+              src={heroImage.imageUrl}
+              alt={heroImage.description}
+              fill
+              className="object-cover"
+              priority
+              data-ai-hint={heroImage.imageHint}
+            />
+        )}
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
+          <h1 className="font-headline text-4xl md:text-6xl font-bold">
+            Gallery
+          </h1>
+          <p className="mt-4 max-w-2xl text-lg">
+            A glimpse into the serene beauty of Vercour Sigiriya and its surroundings.
+          </p>
+        </div>
+      </section>
 
     {/* Gallery Grid */}
     <div className="container mx-auto px-4 py-16 md:py-24">
@@ -54,8 +69,8 @@ export default function GalleryPage() {
         
         {selectedImage && (
           <DialogContent className="max-w-4xl p-2 bg-transparent border-none shadow-none">
-            <DialogTitle asChild>
-              <VisuallyHidden>{selectedImage.description}</VisuallyHidden>
+            <DialogTitle>
+                <VisuallyHidden>{selectedImage.description}</VisuallyHidden>
             </DialogTitle>
             <Image
               src={selectedImage.imageUrl}
