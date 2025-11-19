@@ -30,15 +30,12 @@ export function Footer() {
   return (
     <footer className="bg-background text-foreground">
       <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {/* About Section */}
-          <div className="space-y-4 md:col-span-2 lg:col-span-2">
+          <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
               {logo && <Image src={logo.imageUrl} alt={logo.description} width={140} height={40} className="w-36 h-auto" />}
             </Link>
-            <p className="text-sm text-muted-foreground">
-              Experience Nature & Comfort in the Heart of Sigiriya. Your tranquil escape awaits.
-            </p>
           </div>
 
           {/* Quick Links Section */}
