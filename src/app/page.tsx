@@ -136,15 +136,14 @@ export default function Home() {
       
       {/* Essentials Section */}
       <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
+        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-stretch">
+          <div className="relative min-h-[500px] lg:min-h-full">
             {PlaceHolderImages.find(p => p.id === 'gallery9') && (
               <Image 
                 src={PlaceHolderImages.find(p => p.id === 'gallery9')?.imageUrl ?? ''} 
                 alt={PlaceHolderImages.find(p => p.id === 'gallery9')?.description ?? ''}
-                width={600}
-                height={800}
-                className="w-full h-auto object-cover rounded-lg shadow-lg"
+                fill
+                className="object-cover rounded-lg shadow-lg"
                 data-ai-hint={PlaceHolderImages.find(p => p.id === 'gallery9')?.imageHint ?? ''}
               />
             )}
