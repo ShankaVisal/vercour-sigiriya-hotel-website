@@ -1,11 +1,13 @@
+
 "use client";
 
 import Image from 'next/image';
 import { useState } from 'react';
 import { galleryImages } from '@/lib/data';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Card, CardContent } from '@/components/ui/card';
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 
 // Metadata for SEO is handled in a separate page.tsx if this were a server component,
 // but since it needs state, we'll assume it's set in a parent layout or a metadata-only file.
@@ -52,6 +54,9 @@ export default function GalleryPage() {
         
         {selectedImage && (
           <DialogContent className="max-w-4xl p-2 bg-transparent border-none shadow-none">
+            <DialogTitle asChild>
+              <VisuallyHidden>{selectedImage.description}</VisuallyHidden>
+            </DialogTitle>
             <Image
               src={selectedImage.imageUrl}
               alt={selectedImage.description}
