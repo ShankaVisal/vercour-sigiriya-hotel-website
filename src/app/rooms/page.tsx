@@ -13,7 +13,7 @@ export default function RoomsPage() {
     const heroImage = PlaceHolderImages.find(p => p.id === 'room-deluxe');
   return (
     <>
-      <section className="relative h-[50vh] w-full">
+      <section className="relative h-screen w-full">
         {heroImage && (
             <Image
               src={heroImage.imageUrl}
