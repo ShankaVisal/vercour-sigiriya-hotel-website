@@ -83,6 +83,7 @@ export function Footer() {
         </div>
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Vercour Sigiriya. All Rights Reserved.</p>
+          <p>Website created by tapro IT</p>
         </div>
       </div>
     </footer>
