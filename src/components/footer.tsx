@@ -30,9 +30,9 @@ export function Footer() {
   return (
     <footer className="bg-background text-foreground">
       <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {/* About Section */}
-          <div className="space-y-4 md:col-span-2 lg:col-span-1">
+          <div className="space-y-4 md:col-span-2 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2">
               {logo && <Image src={logo.imageUrl} alt={logo.description} width={140} height={40} className="w-36 h-auto" />}
             </Link>
@@ -70,9 +70,9 @@ export function Footer() {
             </ul>
           </div>
           
-          {/* Booking Section */}
+          {/* Booking & Social Section */}
           <div className="space-y-4">
-            <h4 className="font-semibold font-headline">Book With Us</h4>
+            <h4 className="font-semibold font-headline">Booking & Social</h4>
             <ul className="space-y-2">
                 <li>
                     <a href={BOOKING_COM_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Booking.com</a>
@@ -84,18 +84,14 @@ export function Footer() {
                     <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Airbnb</a>
                 </li>
             </ul>
-          </div>
-            {/* Social Media Section */}
-            <div className="space-y-4">
-                <h4 className="font-semibold font-headline">Follow Us</h4>
-                <div className="flex space-x-4">
-                    {socialLinks.map(link => (
-                        <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={link.name}>
-                            {link.icon}
-                        </a>
-                    ))}
-                </div>
+            <div className="flex space-x-4 pt-4">
+                {socialLinks.map(link => (
+                    <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={link.name}>
+                        {link.icon}
+                    </a>
+                ))}
             </div>
+          </div>
         </div>
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Vercour Sigiriya. All Rights Reserved.</p>
