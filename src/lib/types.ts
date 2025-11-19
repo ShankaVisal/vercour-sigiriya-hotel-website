@@ -13,8 +13,10 @@ export type Amenity = {
 export type Room = {
   id: string;
   name: string;
+  slug: string;
   description: string;
-  image?: ImagePlaceholder;
+  longDescription: string;
+  images: ImagePlaceholder[];
   capacity: number;
   amenities: Amenity[];
   highlights: string[];

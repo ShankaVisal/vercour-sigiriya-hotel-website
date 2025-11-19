@@ -4,35 +4,37 @@ import type { Room } from '@/lib/types';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, Wifi, Tv, Bath, Bed, Wine, Building, Trees, Sofa, Waves } from 'lucide-react';
-import { BOOKING_COM_URL } from '@/lib/constants';
+import { Users, Wifi, Tv, Bath, Bed, Wine, Building, Trees, Sofa, Waves, Wind, AirVent, Fridge } from 'lucide-react';
 
 const amenityIcons: { [key: string]: React.ReactNode } = {
-  default: <Users className="h-4 w-4 text-muted-foreground" />,
+  users: <Users className="h-4 w-4 text-muted-foreground" />,
   wifi: <Wifi className="h-4 w-4 text-muted-foreground" />,
   tv: <Tv className="h-4 w-4 text-muted-foreground" />,
   bath: <Bath className="h-4 w-4 text-muted-foreground" />,
   bed: <Bed className="h-4 w-4 text-muted-foreground" />,
   balcony: <Building className="h-4 w-4 text-muted-foreground" />,
   garden: <Trees className="h-4 w-4 text-muted-foreground" />,
-  users: <Users className="h-4 w-4 text-muted-foreground" />,
   sofa: <Sofa className="h-4 w-4 text-muted-foreground" />,
   pool: <Waves className="h-4 w-4 text-muted-foreground" />,
   wine: <Wine className="h-4 w-4 text-muted-foreground" />,
+  wind: <Wind className="h-4 w-4 text-muted-foreground" />,
+  "air-vent": <AirVent className="h-4 w-4 text-muted-foreground" />,
+  fridge: <Fridge className="h-4 w-4 text-muted-foreground" />,
+  default: <Users className="h-4 w-4 text-muted-foreground" />,
 };
 
 export function RoomCard({ room }: { room: Room }) {
   return (
     <Card className="flex flex-col overflow-hidden h-full">
       <div className="relative w-full h-64">
-        {room.image && (
+        {room.images && room.images.length > 0 && (
           <Image
-            src={room.image.imageUrl}
-            alt={room.image.description}
+            src={room.images[0].imageUrl}
+            alt={room.images[0].description}
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
-            data-ai-hint={room.image.imageHint}
+            data-ai-hint={room.images[0].imageHint}
           />
         )}
       </div>
@@ -44,7 +46,7 @@ export function RoomCard({ room }: { room: Room }) {
                 <span>Up to {room.capacity} guests</span>
             </div>
             <div className='flex items-center gap-2'>
-              {room.amenities.map((amenity) => (
+              {room.amenities.slice(0, 5).map((amenity) => (
                 <div key={amenity.name} className="flex items-center gap-1" title={amenity.name}>
                   {typeof amenity.icon === 'string' ? amenityIcons[amenity.icon] || amenityIcons.default : amenity.icon}
                 </div>
@@ -64,7 +66,7 @@ export function RoomCard({ room }: { room: Room }) {
       </CardContent>
       <CardFooter className="flex flex-wrap gap-2">
         <Button asChild className="flex-grow">
-          <Link href={BOOKING_COM_URL} target="_blank" rel="noopener noreferrer">Book on Booking.com</Link>
+          <Link href={`/rooms/${room.slug}`}>View Details</Link>
         </Button>
         <Button asChild variant="secondary" className="flex-grow">
           <Link href="/contact">Inquire Now</Link>
