@@ -42,6 +42,7 @@ const GuestIcon = () => (
 export default function Home() {
   const featuredRooms = rooms.slice(0, 2);
   const testimonialBg = PlaceHolderImages.find(p => p.id === 'testimonial-bg');
+  const sigiriyaWelcomeImage = PlaceHolderImages.find(p => p.id === 'attraction-sigiriya');
 
   const highlights = [
     {
@@ -239,6 +240,33 @@ export default function Home() {
                 height={400}
                 className="w-full h-auto object-cover"
                 data-ai-hint={PlaceHolderImages.find(p => p.id === 'about-home')?.imageHint ?? ''}
+              />
+            }
+          </div>
+        </div>
+      </section>
+
+      {/* Welcome Section */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+          <div className="order-2 md:order-1">
+            <p className="text-sm uppercase tracking-widest text-primary">Welcome To</p>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold mt-2">Vercour Sigiriya, An Eco-Luxe Reserve</h2>
+            <p className="font-medium text-lg mt-4 mb-6">Ayubowan (May you live long)</p>
+            <div className="space-y-4 text-muted-foreground">
+              <p>Stretching inland from the heart of Sri Lanka's cultural triangle, the untamed wilderness feel of our sanctuary blankets the area around Sigiriya. At the edge of the wild is a one-of-a-kind experience, bringing together unparalleled nature experiences and sublime jungle dwellings.</p>
+              <p>Nestled amidst lush greenery just beyond the borders of ancient kingdoms, Vercour Sigiriya is one of the premier locations in the world for history buffs, nature lovers, and adventurers. Our jungle dwellings provide an immersive experience among the sights and sounds of the island's remarkable fauna and flora.</p>
+            </div>
+          </div>
+          <div className="order-1 md:order-2 rounded-lg overflow-hidden shadow-lg">
+            {sigiriyaWelcomeImage &&
+              <Image 
+                src={sigiriyaWelcomeImage.imageUrl} 
+                alt={sigiriyaWelcomeImage.description}
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover"
+                data-ai-hint={sigiriyaWelcomeImage.imageHint}
               />
             }
           </div>
