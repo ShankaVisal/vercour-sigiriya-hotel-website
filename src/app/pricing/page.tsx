@@ -58,8 +58,8 @@ export default function PricingPage() {
               </TableBody>
             </Table>
             <div className="mt-8 space-y-4 text-sm text-muted-foreground">
-                <p><Badge variant="secondary">Low Season</Badge> May to June, September to October</p>
-                <p><Badge variant="default">High Season</Badge> July to August, November to April</p>
+                <div className="flex items-center gap-2"><Badge variant="secondary">Low Season</Badge> May to June, September to October</div>
+                <div className="flex items-center gap-2"><Badge variant="default">High Season</Badge> July to August, November to April</div>
             </div>
         </div>
       </div>
