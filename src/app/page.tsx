@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Leaf, Mountain, Wind, ArrowRight, Plane, Users, Wifi, Utensils, Waves } from 'lucide-react';
+import { Leaf, Mountain, Wind, ArrowRight, Plane, Users, Wifi, Utensils, Waves, Star } from 'lucide-react';
 import { RoomCard } from '@/components/room-card';
 import { rooms } from '@/lib/data';
 import { MapEmbed } from '@/components/map-embed';
@@ -31,9 +31,17 @@ const LaundryIcon = () => (
   </svg>
 );
 
+const GuestIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-primary">
+    <path d="M16 24V14C16 8.477 20.477 4 26 4c5.523 0 10 4.477 10 10v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M26 24h10c5.523 0 10 4.477 10 10s-4.477 10-10 10H16c-5.523 0-10-4.477-10-10S10.477 24 16 24Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M26 44V14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+)
 
 export default function Home() {
   const featuredRooms = rooms.slice(0, 2);
+  const testimonialBg = PlaceHolderImages.find(p => p.id === 'testimonial-bg');
 
   const highlights = [
     {
@@ -180,6 +188,33 @@ export default function Home() {
                 View All Rooms <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial Section */}
+      <section className="relative py-20 md:py-32">
+        {testimonialBg && (
+          <Image
+            src={testimonialBg.imageUrl}
+            alt={testimonialBg.description}
+            fill
+            className="object-cover"
+            data-ai-hint={testimonialBg.imageHint}
+          />
+        )}
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 container mx-auto px-4 text-center text-white">
+          <div className="max-w-3xl mx-auto">
+            <GuestIcon />
+            <p className="mt-4 text-sm uppercase tracking-widest">Voice from our guests</p>
+            <blockquote className="mt-6 font-headline text-2xl md:text-3xl font-medium">
+              "Cannot say enough good things about this hotel! We thoroughly enjoyed our stay in this little serene beach location. Stone huts were lovely, ours had an outdoor living room overlooking the shaded pool. Food was great at both restaurants and breakfast was included in our price. Staff was great and very friendly."
+            </blockquote>
+            <p className="mt-6 font-semibold">Robert G. - Tripadvisor</p>
+            <div className="mt-2 flex justify-center gap-1 text-yellow-400">
+              {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
+            </div>
           </div>
         </div>
       </section>
