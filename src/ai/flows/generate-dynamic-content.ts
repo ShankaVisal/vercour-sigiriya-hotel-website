@@ -45,4 +45,17 @@ const prompt = ai.definePrompt({
   The generated content should be engaging, SEO-friendly, and relevant to the hotel's theme.
   Focus on creating unique and compelling content variations to enhance user experience and search engine rankings.
 
-  Content:`, // Crucially, this prompt needs to end with 
+  Content:`,
+});
+
+const generateDynamicContentFlow = ai.defineFlow(
+  {
+    name: 'generateDynamicContentFlow',
+    inputSchema: GenerateDynamicContentInputSchema,
+    outputSchema: GenerateDynamicContentOutputSchema,
+  },
+  async (input) => {
+    const {output} = await prompt(input);
+    return output!;
+  }
+);
