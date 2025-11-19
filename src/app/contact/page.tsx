@@ -98,17 +98,15 @@ export default function ContactPage() {
             </Card>
           </div>
         </div>
-
-        {/* Map Section */}
-        <div className="mt-20">
-          <h2 className="text-center font-headline text-3xl font-bold mb-8">How to Find Us</h2>
-          <Card>
-            <CardContent className="p-2 md:p-4">
-              <MapEmbed />
-            </CardContent>
-          </Card>
-        </div>
       </div>
+      
+      {/* Map Section */}
+      <section className="w-full">
+        <div className="container mx-auto px-4 mb-8">
+            <h2 className="text-center font-headline text-3xl font-bold">How to Find Us</h2>
+        </div>
+        <MapEmbed />
+      </section>
     </>
   );
 }

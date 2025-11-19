@@ -2,7 +2,7 @@ import { HOTEL_LOCATION_GMAPS_URL } from '@/lib/constants';
 
 export function MapEmbed() {
   return (
-    <div className="aspect-video w-full overflow-hidden rounded-lg">
+    <div className="h-[450px] w-full">
       <iframe
         src={HOTEL_LOCATION_GMAPS_URL}
         width="100%"
