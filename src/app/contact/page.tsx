@@ -1,0 +1,98 @@
+import { BookingForm } from '@/components/booking-form';
+import { MapEmbed } from '@/components/map-embed';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import type { Metadata } from 'next';
+import { Button } from '@/components/ui/button';
+import { BOOKING_COM_URL, AGODA_URL, AIRBNB_URL, HOTEL_ADDRESS, HOTEL_EMAIL, HOTEL_PHONE } from '@/lib/constants';
+
+export const metadata: Metadata = {
+  title: 'Contact & Booking',
+  description: 'Get in touch with Nature Kabana Hotel for inquiries and bookings. Find our location and contact details, or book through our partner sites.',
+};
+
+export default function ContactPage() {
+  const contactInfo = [
+    { icon: <MapPin className="h-5 w-5 text-primary" />, text: HOTEL_ADDRESS, href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(HOTEL_ADDRESS)}` },
+    { icon: <Phone className="h-5 w-5 text-primary" />, text: HOTEL_PHONE, href: `tel:${HOTEL_PHONE.replace(/\s/g, '')}` },
+    { icon: <Mail className="h-5 w-5 text-primary" />, text: HOTEL_EMAIL, href: `mailto:${HOTEL_EMAIL}` },
+  ];
+
+  return (
+    <>
+      {/* Page Header */}
+      <section className="bg-secondary/30 py-16 md:py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="font-headline text-4xl md:text-5xl font-bold">Contact & Booking</h1>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+            We're excited to welcome you. Reach out for any questions or to start planning your stay.
+          </p>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-16 md:py-24">
+        <div className="grid lg:grid-cols-5 gap-12">
+            
+          {/* Contact Form */}
+          <div className="lg:col-span-3">
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-headline text-2xl">Send Us an Inquiry</CardTitle>
+                <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <BookingForm />
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Contact Info & Booking Links */}
+          <div className="lg:col-span-2 space-y-8">
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-headline text-2xl">Contact Details</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {contactInfo.map((item, index) => (
+                  <a key={index} href={item.href} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 text-muted-foreground hover:text-primary transition-colors">
+                    <span className="mt-1">{item.icon}</span>
+                    <span className='flex-1'>{item.text}</span>
+                  </a>
+                ))}
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-headline text-2xl">Book via Partners</CardTitle>
+                <CardDescription>Book instantly through our trusted partners.</CardDescription>
+              </CardHeader>
+              <CardContent className="flex flex-col gap-3">
+                <Button asChild size="lg">
+                    <a href={BOOKING_COM_URL} target="_blank" rel="noopener noreferrer">Booking.com</a>
+                </Button>
+                <Button asChild size="lg" variant="secondary">
+                    <a href={AGODA_URL} target="_blank" rel="noopener noreferrer">Agoda</a>
+                </Button>
+                <Button asChild size="lg" variant="secondary">
+                    <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer">Airbnb</a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Map Section */}
+        <div className="mt-20">
+          <h2 className="text-center font-headline text-3xl font-bold mb-8">How to Find Us</h2>
+          <Card>
+            <CardContent className="p-2 md:p-4">
+              <MapEmbed />
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </>
+  );
+}

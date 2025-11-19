@@ -1,3 +1,196 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "Lush green jungle canopy with a misty atmosphere",
+      "imageUrl": "https://images.unsplash.com/photo-1632037667990-227e49f350c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxqdW5nbGUlMjBjYW5vcHl8ZW58MHx8fHwxNzYzNDc5NDgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "jungle canopy"
+    },
+    {
+      "id": "logo",
+      "description": "Nature Kabana Hotel Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1565883625956-a7cb1eb9d5a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsZWFmJTIwbG9nb3xlbnwwfHx8fDE3NjM1Mzg1ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leaf logo"
+    },
+    {
+      "id": "room-deluxe",
+      "description": "Interior of a deluxe cabana with a view of the garden",
+      "imageUrl": "https://images.unsplash.com/photo-1750271336583-a6d9e975015c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxydXN0aWMlMjBiZWRyb29tfGVufDB8fHx8MTc2MzUzODU4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rustic bedroom"
+    },
+    {
+      "id": "room-standard",
+      "description": "Interior of a standard cabana with wooden furniture",
+      "imageUrl": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxob3RlbCUyMHJvb218ZW58MHx8fHwxNzYzNTIzNDQwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hotel room"
+    },
+    {
+      "id": "room-family",
+      "description": "Spacious family cabana with multiple beds",
+      "imageUrl": "https://images.unsplash.com/photo-1680703486830-1b5af60635d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYWJpbiUyMGludGVyaW9yfGVufDB8fHx8MTc2MzUyNTgxOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cabin interior"
+    },
+    {
+      "id": "room-suite",
+      "description": "Luxurious suite with a private balcony",
+      "imageUrl": "https://images.unsplash.com/photo-1560703652-f3fd178338b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsdXh1cnklMjBzdWl0ZXxlbnwwfHx8fDE3NjM0ODE0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "luxury suite"
+    },
+    {
+      "id": "gallery1",
+      "description": "Close-up of a tropical flower in the garden",
+      "imageUrl": "https://images.unsplash.com/photo-1527017895487-3ac53c0f03fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0cm9waWNhbCUyMGZsb3dlcnxlbnwwfHx8fDE3NjM0ODgzNzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tropical flower"
+    },
+    {
+      "id": "gallery2",
+      "description": "A tranquil pond in the hotel's nature garden",
+      "imageUrl": "https://images.unsplash.com/photo-1630175322777-90711986feab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxnYXJkZW4lMjBwb25kfGVufDB8fHx8MTc2MzUzMzEwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "garden pond"
+    },
+    {
+      "id": "gallery3",
+      "description": "View of Sigiriya Rock from a distance",
+      "imageUrl": "https://images.unsplash.com/photo-1612862862126-865765df2ded?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzaWdpcml5YSUyMHJvY2t8ZW58MHx8fHwxNzYzNDM1MjAzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sigiriya rock"
+    },
+    {
+      "id": "gallery4",
+      "description": "A beautifully arranged breakfast at the hotel",
+      "imageUrl": "https://images.unsplash.com/photo-1493770348161-369560ae357d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxoZWFsdGh5JTIwYnJlYWtmYXN0fGVufDB8fHx8MTc2MzQ0NTY0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "healthy breakfast"
+    },
+    {
+      "id": "gallery5",
+      "description": "A walking path through the hotel's garden",
+      "imageUrl": "https://images.unsplash.com/photo-1596086221164-c8a4cac55e27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnYXJkZW4lMjBwYXRofGVufDB8fHx8MTc2MzUzODU4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "garden path"
+    },
+    {
+      "id": "gallery6",
+      "description": "Exterior view of a cabana surrounded by trees",
+      "imageUrl": "https://images.unsplash.com/photo-1558983925-7cd5dd39079b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxqdW5nbGUlMjBjYWJpbnxlbnwwfHx8fDE3NjM1Mzg1ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "jungle cabin"
+    },
+    {
+      "id": "gallery7",
+      "description": "An elephant during a safari in Minneriya National Park",
+      "imageUrl": "https://images.unsplash.com/photo-1656025664223-4a471c64e608?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3aWxkJTIwZWxlcGhhbnR8ZW58MHx8fHwxNzYzNTM4NTgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "wild elephant"
+    },
+    {
+      "id": "gallery8",
+      "description": "Relaxation area with hammocks in the garden",
+      "imageUrl": "https://images.unsplash.com/photo-1680125313852-d21f242c2e1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoYW1tb2NrJTIwZ2FyZGVufGVufDB8fHx8MTc2MzUzODU4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hammock garden"
+    },
+    {
+      "id": "gallery9",
+      "description": "The hotel's swimming pool at dusk",
+      "imageUrl": "https://images.unsplash.com/photo-1671362962572-50cf4edca731?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxyZXNvcnQlMjBwb29sfGVufDB8fHx8MTc2MzUxMzY4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "resort pool"
+    },
+    {
+      "id": "gallery10",
+      "description": "A colorful bird native to Sri Lanka",
+      "imageUrl": "https://images.unsplash.com/photo-1682788819488-5f894b553503?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxleG90aWMlMjBiaXJkfGVufDB8fHx8MTc2MzQzMTUwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "exotic bird"
+    },
+    {
+      "id": "gallery11",
+      "description": "Dambulla Cave Temple statue",
+      "imageUrl": "https://images.unsplash.com/photo-1529485726363-95c8d62f656f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxidWRkaGElMjBzdGF0dWV8ZW58MHx8fHwxNzYzNTM4NTgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "buddha statue"
+    },
+    {
+      "id": "gallery12",
+      "description": "Hot air balloons over the Sigiriya landscape",
+      "imageUrl": "https://images.unsplash.com/photo-1708545831968-b058e217184b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxob3RhaXIlMjBiYWxsb29ufGVufDB8fHx8MTc2MzUzODU4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hotair balloon"
+    },
+    {
+      "id": "about-story",
+      "description": "Founders of the hotel smiling in front of a cabana",
+      "imageUrl": "https://images.unsplash.com/photo-1491582990992-68ec88e070a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxoYXBweSUyMGNvdXBsZXxlbnwwfHx8fDE3NjM1Mzg1ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "happy couple"
+    },
+    {
+      "id": "about-mission",
+      "description": "Hands planting a small sapling",
+      "imageUrl": "https://images.unsplash.com/photo-1513086670993-297187d3a281?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwbGFudGluZyUyMHRyZWV8ZW58MHx8fHwxNzYzNTM4NTgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "planting tree"
+    },
+    {
+      "id": "about-home",
+      "description": "A serene view of a nature resort",
+      "imageUrl": "https://images.unsplash.com/photo-1629558159968-d62dabae9624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxuYXR1cmUlMjByZXNvcnR8ZW58MHx8fHwxNzYzNTM4NTgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "nature resort"
+    },
+    {
+      "id": "garden1",
+      "description": "Lush walking path in the nature garden",
+      "imageUrl": "https://images.unsplash.com/photo-1621535884102-d13e00c76283?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxnYXJkZW4lMjBwYXRofGVufDB8fHx8MTc2MzUzODU4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "garden path"
+    },
+    {
+      "id": "garden2",
+      "description": "A wooden bench in a quiet relaxation area",
+      "imageUrl": "https://images.unsplash.com/photo-1445937888010-cc262f556033?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwYXJrJTIwYmVuY2h8ZW58MHx8fHwxNzYzNTA2NDYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "park bench"
+    },
+    {
+      "id": "attraction-sigiriya",
+      "description": "The majestic Sigiriya Rock Fortress at sunrise",
+      "imageUrl": "https://images.unsplash.com/photo-1627895457805-c7bf42cb9873?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzaWdpcml5YSUyMHJvY2t8ZW58MHx8fHwxNzYzNDM1MjAzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sigiriya rock"
+    },
+    {
+      "id": "attraction-pidurangala",
+      "description": "View from the top of Pidurangala Rock",
+      "imageUrl": "https://images.unsplash.com/photo-1615809265087-1416ccddd6ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtb3VudGFpbiUyMHZpZXd8ZW58MHx8fHwxNzYzNDU1ODcyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mountain view"
+    },
+    {
+      "id": "attraction-minneriya",
+      "description": "A herd of elephants at Minneriya National Park",
+      "imageUrl": "https://images.unsplash.com/photo-1548523507-fe3c0f2ed39d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZWxlcGhhbnRzJTIwaGVyZHxlbnwwfHx8fDE3NjM1Mzg1ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "elephants herd"
+    },
+    {
+      "id": "attraction-dambulla",
+      "description": "Ancient paintings inside Dambulla Cave Temple",
+      "imageUrl": "https://images.unsplash.com/photo-1647705776853-f754f2081a8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2F2ZSUyMHBhaW50aW5nc3xlbnwwfHx8fDE3NjM1Mzg1ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cave paintings"
+    },
+    {
+      "id": "attraction-village",
+      "description": "A traditional Sri Lankan village scene",
+      "imageUrl": "https://images.unsplash.com/photo-1735833493638-126607abc678?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx2aWxsYWdlJTIwbGlmZXxlbnwwfHx8fDE3NjM0ODkwNjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "village life"
+    },
+    {
+      "id": "attraction-balloon",
+      "description": "Hot air balloon floating over the jungle",
+      "imageUrl": "https://images.unsplash.com/photo-1693559451315-e01f397b1fc0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxob3RhaXIlMjBiYWxsb29ufGVufDB8fHx8MTc2MzUzODU4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hotair balloon"
+    },
+    {
+      "id": "avatar1",
+      "description": "Avatar for a reviewer",
+      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjM0NzE1OTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "avatar2",
+      "description": "Avatar for a reviewer",
+      "imageUrl": "https://images.unsplash.com/photo-1592621385612-4d7129426394?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3b21hbiUyMHNtaWxpbmd8ZW58MHx8fHwxNzYzNTI1MTc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman smiling"
+    },
+    {
+      "id": "avatar3",
+      "description": "Avatar for a reviewer",
+      "imageUrl": "https://images.unsplash.com/photo-1636377985931-898218afd306?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjM0OTU3MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    }
+  ]
 }
