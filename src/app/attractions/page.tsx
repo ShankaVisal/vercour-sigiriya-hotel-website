@@ -1,7 +1,6 @@
 import { AttractionCard } from '@/components/attraction-card';
 import { attractions } from '@/lib/data';
 import type { Metadata } from 'next';
-import { DynamicContentGenerator } from '@/components/dynamic-content-generator';
 
 export const metadata: Metadata = {
   title: 'Things To Do in Sigiriya',
@@ -21,15 +20,13 @@ export default function AttractionsPage() {
         </div>
       </section>
 
-      {/* Attractions Grid */}
+      {/* Attractions List */}
       <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-4xl mx-auto space-y-12">
           {attractions.map((attraction) => (
             <AttractionCard key={attraction.id} attraction={attraction} />
           ))}
         </div>
-
-        <DynamicContentGenerator sectionName="Things To Do" />
       </div>
     </>
   );

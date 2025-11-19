@@ -93,38 +93,86 @@ export const attractions: Attraction[] = [
   {
     id: 'sigiriya-rock',
     name: 'Sigiriya Rock Fortress',
-    description: 'Climb the ancient fortress built atop a massive rock column. Discover beautiful frescoes, landscaped gardens, and breathtaking panoramic views.',
+    description: 'A UNESCO World Heritage site, this ancient fortress is built atop a massive 200-meter high rock column. It\'s one of Sri Lanka\'s most iconic and dramatic historical locations.',
     image: PlaceHolderImages.find(p => p.id === 'attraction-sigiriya'),
+    highlights: [
+      'Climb to the summit for breathtaking 360-degree views.',
+      'Admire the famous 5th-century frescoes of the "Sigiriya Maidens".',
+      'Walk through the landscaped water gardens, boulder gardens, and terraced gardens.',
+      'Pass through the monumental Lion Gate (paws) on your way to the top.'
+    ],
+    bestTime: 'Early morning or late afternoon to avoid heat.',
+    travelTime: '15 mins from hotel',
   },
   {
     id: 'pidurangala-rock',
     name: 'Pidurangala Rock',
-    description: 'For the more adventurous, a hike up Pidurangala offers a stunning, alternative view of Sigiriya Rock, especially at sunrise.',
+    description: 'A more challenging but rewarding hike, Pidurangala offers a natural, less-crowded alternative with the absolute best panoramic view of Sigiriya Rock itself.',
     image: PlaceHolderImages.find(p => p.id === 'attraction-pidurangala'),
+    highlights: [
+      'Experience a stunning sunrise or sunset view over the jungle canopy.',
+      'Explore the ancient cave temple and a giant reclining Buddha statue en route.',
+      'Enjoy a more adventurous and rustic climb compared to Sigiriya.',
+      'Perfect for photographers and nature lovers seeking tranquility.'
+    ],
+    bestTime: 'Sunrise (5:30 AM) or Sunset (4:30 PM).',
+    travelTime: '20 mins from hotel',
   },
   {
     id: 'minneriya-safari',
     name: 'Minneriya Safari',
-    description: 'Witness the incredible "Gathering" of elephants at Minneriya National Park, one of Asia\'s most spectacular wildlife events.',
+    description: 'Witness "The Gathering," an incredible natural spectacle where hundreds of elephants congregate around the Minneriya reservoir, especially during the dry season.',
     image: PlaceHolderImages.find(p => p.id === 'attraction-minneriya'),
+    highlights: [
+      'One of the best places in Asia to see large herds of wild elephants.',
+      'Opportunity to spot diverse wildlife including deer, monkeys, and numerous bird species.',
+      'Enjoy a thrilling jeep safari through the vast national park.',
+      'The experience varies with seasons, offering unique sightings year-round.'
+    ],
+    bestTime: 'Dry Season (May to September).',
+    travelTime: '45 mins from hotel',
   },
   {
     id: 'dambulla-cave-temple',
     name: 'Dambulla Cave Temple',
-    description: 'Explore a complex of ancient cave temples, a UNESCO World Heritage site, filled with hundreds of Buddha statues and vibrant murals.',
+    description: 'Also known as the Golden Temple of Dambulla, this is the largest and best-preserved cave temple complex in Sri Lanka, housing hundreds of statues and vibrant murals.',
     image: PlaceHolderImages.find(p => p.id === 'attraction-dambulla'),
+    highlights: [
+      'Explore five major caves filled with over 150 Buddha statues.',
+      'Marvel at intricate religious murals covering the cave ceilings and walls.',
+      'Another designated UNESCO World Heritage site, rich in history and art.',
+      'Experience a place of active worship and profound spiritual significance.'
+    ],
+    bestTime: 'Any time of day.',
+    travelTime: '30 mins from hotel',
   },
   {
     id: 'village-tours',
     name: 'Village Tours',
-    description: 'Experience authentic Sri Lankan rural life. Take a bullock cart ride, learn to cook traditional food, and enjoy a canoe ride on the lake.',
+    description: 'Immerse yourself in authentic Sri Lankan rural life. This cultural experience offers a glimpse into the traditional and simple lifestyle of a local village.',
     image: PlaceHolderImages.find(p => p.id === 'attraction-village'),
+    highlights: [
+      'Take a charming bullock cart ride through lush paddy fields.',
+      'Enjoy a peaceful canoe ride across a serene village lake.',
+      'Participate in a hands-on cooking demonstration of traditional Sri Lankan cuisine.',
+      'Savor a delicious, home-cooked lunch served on lotus leaves.'
+    ],
+    bestTime: 'Morning or Afternoon.',
+    travelTime: 'Starts locally, 10 mins away',
   },
   {
     id: 'hot-air-balloon',
     name: 'Hot Air Balloon Rides',
-    description: 'Get a bird\'s-eye view of Sigiriya\'s stunning landscape with a magical hot air balloon ride at dawn.',
+    description: 'Float serenely over the breathtaking landscapes of Sigiriya. Get a magical bird\'s-eye view of the ancient rock fortresses, jungles, and lakes at dawn.',
     image: PlaceHolderImages.find(p => p.id === 'attraction-balloon'),
+    highlights: [
+      'A unique and unforgettable perspective of the Cultural Triangle.',
+      'Experience the peace and quiet of floating above the world as the sun rises.',
+      'Excellent opportunities for aerial photography.',
+      'Typically includes a celebratory champagne toast upon landing.'
+    ],
+    bestTime: 'Sunrise (seasonal, Nov to Apr).',
+    travelTime: '20 mins to launch site',
   },
 ];
 

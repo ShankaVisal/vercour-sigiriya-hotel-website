@@ -27,6 +27,9 @@ export type Attraction = {
   name: string;
   description: string;
   image?: ImagePlaceholder;
+  highlights: string[];
+  bestTime: string;
+  travelTime: string;
 };
 
 export type Review = {
