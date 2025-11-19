@@ -14,7 +14,7 @@ export default function AttractionsPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative h-[50vh] w-full">
+      <section className="relative h-screen w-full">
         {heroImage && (
             <Image
               src={heroImage.imageUrl}
@@ -27,10 +27,10 @@ export default function AttractionsPage() {
         )}
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
-          <h1 className="font-headline text-4xl md:text-6xl font-bold">
+          <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-normal tracking-wider">
             Things To Do
           </h1>
-          <p className="mt-4 max-w-2xl text-lg">
+          <p className="mt-4 max-w-2xl text-md md:text-lg tracking-wide">
             Discover the rich history and natural wonders that await you in and around Sigiriya.
           </p>
         </div>
