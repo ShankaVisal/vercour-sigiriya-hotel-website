@@ -21,25 +21,36 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      // Transition from transparent to solid when scrolling down
+      setIsScrolled(window.scrollY > 50);
     };
 
-    if (isHomePage) {
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    } else {
-        setIsScrolled(true);
-    }
-  }, [isHomePage]);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Set initial state
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const headerClasses = cn(
-    'sticky top-0 z-50 w-full transition-all duration-300',
+    'fixed top-0 z-50 w-full transition-all duration-300',
     isHomePage && !isScrolled
       ? 'bg-transparent text-white'
       : 'bg-background/95 text-foreground shadow-md backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b'
   );
+
+  const linkClasses = cn(
+    'transition-colors hover:text-primary',
+    isHomePage && !isScrolled ? 'text-white' : 'text-foreground/70'
+  );
+
+  const activeLinkClasses = cn(
+      isHomePage && !isScrolled ? 'text-white font-semibold' : 'text-primary font-semibold'
+  );
+
 
   const NavLinks = ({ className }: { className?: string }) => (
     <nav className={cn('flex items-center gap-6 text-sm font-medium', className)}>
@@ -48,10 +59,7 @@ export function Header() {
           key={link.href}
           href={link.href}
           onClick={() => setIsMobileMenuOpen(false)}
-          className={cn(
-            'transition-colors hover:text-primary',
-            pathname === link.href ? 'text-primary font-semibold' : (isHomePage && !isScrolled ? 'text-white' : 'text-foreground/70')
-          )}
+          className={cn(linkClasses, pathname === link.href && activeLinkClasses)}
         >
           {link.label}
         </Link>
@@ -66,9 +74,9 @@ export function Header() {
           {logo && <Image src={logo.imageUrl} alt={logo.description} width={140} height={40} className={cn("w-36 h-auto", isHomePage && !isScrolled && "invert brightness-0")} />}
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-4">
           <NavLinks />
-          <Button asChild>
+          <Button asChild variant={isHomePage && !isScrolled ? "outline" : "default"} size="sm">
             <Link href="/contact">Book Now</Link>
           </Button>
         </div>
