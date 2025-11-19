@@ -7,12 +7,6 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Footer() {
-  const bookingSites = [
-    { name: 'Booking.com', url: BOOKING_COM_URL, icon: 'B' },
-    { name: 'Agoda', url: AGODA_URL, icon: 'A' },
-    { name: 'Airbnb', url: AIRBNB_URL, icon: 'A' },
-  ];
-
   const contactInfo = [
     { icon: <MapPin className="h-4 w-4" />, text: HOTEL_ADDRESS, href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(HOTEL_ADDRESS)}` },
     { icon: <Phone className="h-4 w-4" />, text: HOTEL_PHONE, href: `tel:${HOTEL_PHONE.replace(/\s/g, '')}` },
@@ -22,7 +16,7 @@ export function Footer() {
   const logo = PlaceHolderImages.find(p => p.id === 'logo');
 
   return (
-    <footer className="bg-secondary/50 text-secondary-foreground">
+    <footer className="bg-background text-foreground">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
@@ -55,8 +49,8 @@ export function Footer() {
             <ul className="space-y-2">
               {contactInfo.map((item, index) => (
                 <li key={index}>
-                  <a href={item.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                    {item.icon}
+                  <a href={item.href} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <span className='pt-1'>{item.icon}</span>
                     <span>{item.text}</span>
                   </a>
                 </li>
@@ -67,17 +61,17 @@ export function Footer() {
           {/* Booking Section */}
           <div className="space-y-4">
             <h4 className="font-semibold font-headline">Book With Our Partners</h4>
-            <div className="flex flex-col space-y-2 items-start">
-              <Button asChild variant="outline" className="w-full justify-start">
-                  <a href={BOOKING_COM_URL} target="_blank" rel="noopener noreferrer">Booking.com</a>
-              </Button>
-              <Button asChild variant="outline" className="w-full justify-start">
-                  <a href={AGODA_URL} target="_blank" rel="noopener noreferrer">Agoda</a>
-              </Button>
-              <Button asChild variant="outline" className="w-full justify-start">
-                  <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer">Airbnb</a>
-              </Button>
-            </div>
+            <ul className="space-y-2">
+                <li>
+                    <a href={BOOKING_COM_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Booking.com</a>
+                </li>
+                <li>
+                    <a href={AGODA_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Agoda</a>
+                </li>
+                <li>
+                    <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Airbnb</a>
+                </li>
+            </ul>
           </div>
 
         </div>
