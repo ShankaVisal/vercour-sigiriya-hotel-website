@@ -99,16 +99,13 @@ export default function Home() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative h-screen w-full">
-        {heroImage && (
-            <Image
-              src={heroImage.imageUrl}
-              alt={heroImage.description}
-              fill
-              className="object-cover"
-              priority
-              data-ai-hint={heroImage.imageHint}
-            />
-        )}
+        <Image
+          src="/assest/1.2.jpg"
+          alt="Vercour Sigiriya hero view"
+          fill
+          className="object-cover"
+          priority
+        />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
           <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-normal tracking-wider">
@@ -166,15 +163,12 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-stretch">
           <div className="relative min-h-[500px] lg:min-h-full">
-            {PlaceHolderImages.find(p => p.id === 'gallery9') && (
-              <Image 
-                src={PlaceHolderImages.find(p => p.id === 'gallery9')?.imageUrl ?? ''} 
-                alt={PlaceHolderImages.find(p => p.id === 'gallery9')?.description ?? ''}
-                fill
-                className="object-cover rounded-lg shadow-lg"
-                data-ai-hint={PlaceHolderImages.find(p => p.id === 'gallery9')?.imageHint ?? ''}
-              />
-            )}
+            <Image
+              src="/assest/1.2.jpg"
+              alt="Discover the services we offer"
+              fill
+              className="object-cover rounded-lg shadow-lg"
+            />
           </div>
           <div>
             <p className="text-sm uppercase tracking-widest text-muted-foreground">Discover the services we offer</p>
@@ -259,16 +253,13 @@ export default function Home() {
             </Button>
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg">
-            {PlaceHolderImages.find(p => p.id === 'about-home') &&
-              <Image 
-                src={PlaceHolderImages.find(p => p.id === 'about-home')?.imageUrl ?? ''} 
-                alt={PlaceHolderImages.find(p => p.id === 'about-home')?.description ?? ''}
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover"
-                data-ai-hint={PlaceHolderImages.find(p => p.id === 'about-home')?.imageHint ?? ''}
-              />
-            }
+            <Image
+              src="/assest/1.jpg"
+              alt="Your Gateway to Serenity"
+              width={600}
+              height={400}
+              className="w-full h-auto object-cover"
+            />
           </div>
         </div>
       </section>

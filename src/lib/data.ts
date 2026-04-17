@@ -18,9 +18,16 @@ export const rooms: Room[] = [
     id: 'deluxe-cabana',
     name: 'Deluxe Jungle Cabana',
     slug: 'deluxe-jungle-cabana',
+    isAvailable: true,
     description: 'Immerse yourself in nature with our Deluxe Jungle Cabana. A perfect blend of comfort and rustic charm.',
     longDescription: 'Our Deluxe Jungle Cabana is a sanctuary of peace designed for those who want to immerse themselves in nature without sacrificing comfort. The room features a plush king-sized bed, a modern en-suite bathroom with a rain shower, and elegant, locally crafted furniture. The highlight is the private balcony that offers stunning, uninterrupted views of our lush garden and the jungle beyond. It\'s the perfect spot for your morning coffee or evening relaxation, surrounded by the sights and sounds of the wild.',
-    images: PlaceHolderImages.filter(p => ['room-deluxe', 'gallery1', 'gallery5', 'gallery9'].includes(p.id)),
+    images: [
+      { id: '1', imageUrl: '/assest/1.1.jpg', description: 'Deluxe Jungle Cabana view 1', imageHint: 'Deluxe cabana exterior' },
+      { id: '2', imageUrl: '/assest/1.2.jpg', description: 'Deluxe Jungle Cabana view 2', imageHint: 'Deluxe cabana interior' },
+      { id: '3', imageUrl: '/assest/1.3.jpg', description: 'Deluxe Jungle Cabana view 3', imageHint: 'Deluxe cabana bedroom' },
+      { id: '4', imageUrl: '/assest/1.4.jpg', description: 'Deluxe Jungle Cabana view 4', imageHint: 'Deluxe cabana amenities' },
+      { id: '5', imageUrl: '/assest/1.5.jpg', description: 'Deluxe Jungle Cabana view 5', imageHint: 'Deluxe cabana garden view' },
+    ] as any,
     capacity: 2,
     amenities: [
       { name: 'King Size Bed', icon: 'bed' },
@@ -36,9 +43,15 @@ export const rooms: Room[] = [
     id: 'standard-cabana',
     name: 'Standard Garden Cabana',
     slug: 'standard-garden-cabana',
+    isAvailable: true,
     description: 'Our Standard Garden Cabana offers a cozy and comfortable stay with easy access to our lush gardens.',
     longDescription: 'The Standard Garden Cabana provides a cozy and comfortable retreat for solo travelers or couples. It features a comfortable queen-sized bed, an en-suite bathroom with hot water, and all the essential amenities for a pleasant stay. The room opens up to a shared veranda with direct access to our beautiful nature garden, allowing you to step out and enjoy the fresh air and greenery whenever you wish. It’s a wonderful and affordable option for those looking to connect with nature.',
-    images: PlaceHolderImages.filter(p => ['room-standard', 'gallery2', 'garden1', 'gallery6'].includes(p.id)),
+    images: [
+      { id: '1', imageUrl: '/assest/2.1.jpg', description: 'Standard Garden Cabana view 1', imageHint: 'Standard cabana exterior' },
+      { id: '2', imageUrl: '/assest/2.2.jpg', description: 'Standard Garden Cabana view 2', imageHint: 'Standard cabana interior' },
+      { id: '3', imageUrl: '/assest/2.3.jpg', description: 'Standard Garden Cabana view 3', imageHint: 'Standard cabana bedroom' },
+      { id: '4', imageUrl: '/assest/2.4.png', description: 'Standard Garden Cabana view 4', imageHint: 'Standard cabana garden' },
+    ] as any,
     capacity: 2,
     amenities: [
       { name: 'Queen Size Bed', icon: 'bed' },
@@ -52,6 +65,7 @@ export const rooms: Room[] = [
   {
     id: 'family-cabana',
     name: 'Family Garden Cabana',
+    isAvailable: false,
     slug: 'family-garden-cabana',
     description: 'Perfect for families or small groups, this spacious cabana provides ample room to relax and unwind.',
     longDescription: 'Designed with families in mind, our Family Garden Cabana is a spacious and welcoming haven. It features a king bed for adults and two comfortable single beds, accommodating up to four guests. A dedicated seating area with a sofa provides a great space for the family to gather. The large, modern bathroom and amenities like a flat-screen TV ensure a comfortable stay for everyone. It’s the ideal base for your family’s Sigiriya adventure.',
@@ -70,6 +84,7 @@ export const rooms: Room[] = [
   {
     id: 'honeymoon-suite',
     name: 'Honeymoon Suite',
+    isAvailable: false,
     slug: 'honeymoon-suite',
     description: 'Celebrate your special moments in our exclusive and romantic Honeymoon Suite with a private plunge pool.',
     longDescription: 'For the ultimate romantic escape, our Honeymoon Suite offers unparalleled privacy and luxury. This exclusive suite features a plush king bed, a lavish bathroom with a large soaking tub, and a separate living area. The true gem is the private plunge pool on your secluded terrace, overlooking the most scenic parts of our property. We welcome you with complimentary champagne to start your celebration. It’s a perfect sanctuary for couples to create unforgettable memories.',

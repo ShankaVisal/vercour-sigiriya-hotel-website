@@ -77,19 +77,28 @@ export function RoomCard({ room }: { room: Room }) {
 
       <CardFooter className="p-6 pt-0 bg-card flex flex-col items-start gap-4">
         <div className="flex flex-wrap gap-2">
-            {room.highlights.map((highlight) => (
-              <Badge key={highlight} variant="secondary">
-                {highlight}
-              </Badge>
-            ))}
-          </div>
+          {room.highlights.map((highlight) => (
+            <Badge key={highlight} variant="secondary">
+              {highlight}
+            </Badge>
+          ))}
+          {!room.isAvailable && <Badge variant="destructive">Coming Soon</Badge>}
+        </div>
         <div className="w-full flex gap-2">
-          <Button asChild className="flex-grow">
-            <Link href={`/rooms/${room.slug}`}>View Details</Link>
-          </Button>
-          <Button asChild variant="secondary" className="flex-grow">
-            <Link href="/contact">Inquire Now</Link>
-          </Button>
+          {room.isAvailable ? (
+            <>
+              <Button asChild className="flex-grow">
+                <Link href={`/rooms/${room.slug}`}>View Details</Link>
+              </Button>
+              <Button asChild variant="secondary" className="flex-grow">
+                <Link href="/contact">Inquire Now</Link>
+              </Button>
+            </>
+          ) : (
+            <Button className="w-full" disabled>
+              Coming Soon
+            </Button>
+          )}
         </div>
       </CardFooter>
     </Card>

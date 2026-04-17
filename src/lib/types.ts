@@ -14,6 +14,7 @@ export type Room = {
   id: string;
   name: string;
   slug: string;
+  isAvailable: boolean;
   description: string;
   longDescription: string;
   images: ImagePlaceholder[];

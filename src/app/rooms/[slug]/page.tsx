@@ -6,9 +6,11 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { Users, Wifi, Tv, Bath, Bed, Wine, Building, Trees, Sofa, Waves, Wind, AirVent } from 'lucide-react';
 import { BOOKING_COM_URL } from '@/lib/constants';
+import { RoomGalleryCarousel } from '@/components/room-gallery-carousel';
 
 const FridgeIcon = ({className}: {className?: string}) => (
     <svg
@@ -48,11 +50,12 @@ const amenityIcons: { [key: string]: React.ReactNode } = {
   
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const room = rooms.find((room) => room.slug === params.slug);
+  const resolvedParams = await params;
+  const room = rooms.find((room) => room.slug === resolvedParams.slug);
 
   if (!room) {
     return {
@@ -66,117 +69,134 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function RoomPage({ params }: Props) {
-  const room = rooms.find((room) => room.slug === params.slug);
+export default async function RoomPage({ params }: Props) {
+  const resolvedParams = await params;
+  const room = rooms.find((room) => room.slug === resolvedParams.slug);
 
-  if (!room) {
+  if (!room || !room.isAvailable) {
     notFound();
   }
 
   return (
     <>
-      {/* Page Header */}
-      <section className="relative h-[50vh] w-full">
+      {/* Hero Section with Gradient Overlay */}
+      <section className="relative h-96 md:h-[500px] w-full">
         {room.images.length > 0 && (
-            <Image
-              src={room.images[0].imageUrl}
-              alt={room.images[0].description}
-              fill
-              className="object-cover"
-              priority
-              data-ai-hint={room.images[0].imageHint}
-            />
+          <Image
+            src={room.images[0].imageUrl}
+            alt={room.images[0].description}
+            fill
+            className="object-cover"
+            priority
+          />
         )}
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
-          <h1 className="font-headline text-4xl md:text-6xl font-bold">
-            {room.name}
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg">
-            {room.description}
-          </p>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/70" />
+        <div className="relative z-10 flex h-full flex-col items-center justify-end text-center text-white p-4 pb-12">
+          <div className="max-w-3xl">
+            <h1 className="font-headline text-4xl md:text-5xl font-bold mb-3 tracking-tight">
+              {room.name}
+            </h1>
+            <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto">
+              {room.description}
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-16 md:py-24 space-y-20">
-        {/* Image Carousel */}
-        <section>
-          <Carousel className="w-full max-w-4xl mx-auto">
-            <CarouselContent>
-              {room.images.map((image, index) => (
-                <CarouselItem key={index}>
-                  <Card className="overflow-hidden">
-                    <CardContent className="p-0">
-                      <div className="relative h-96">
-                        <Image
-                          src={image.imageUrl}
-                          alt={image.description}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 1024px) 100vw, 1024px"
-                          data-ai-hint={image.imageHint}
-                        />
-                      </div>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 z-10" />
-            <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 z-10" />
-          </Carousel>
-        </section>
-        
-        {/* Room Details */}
-        <section className="grid md:grid-cols-3 gap-12">
-            <div className="md:col-span-2">
-                <h2 className="font-headline text-3xl font-bold mb-4">About this room</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                    {room.longDescription}
+      <div className="bg-gradient-to-b from-background to-secondary/10">
+        <div className="container mx-auto px-4 py-20 md:py-32">
+          {/* Image Gallery Carousel */}
+          <section className="mb-24">
+            <h2 className="font-headline text-3xl font-bold mb-8">Photo Gallery</h2>
+            <RoomGalleryCarousel images={room.images} />
+          </section>
+
+          {/* Two Column Layout */}
+          <section className="grid md:grid-cols-3 gap-12 lg:gap-16">
+            {/* Left Column - Description & Amenities */}
+            <div className="md:col-span-2 space-y-12">
+              {/* About Section */}
+              <div>
+                <h2 className="font-headline text-3xl md:text-4xl font-bold mb-6">About {room.name}</h2>
+                <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                  {room.longDescription}
                 </p>
+              </div>
 
-                <h3 className="font-headline text-2xl font-bold mt-12 mb-6">What this place offers</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                    {room.amenities.map(amenity => (
-                        <div key={amenity.name} className="flex items-center gap-3">
-                            {typeof amenity.icon === 'string' ? amenityIcons[amenity.icon] || amenityIcons.default : amenity.icon}
-                            <span className="text-sm">{amenity.name}</span>
-                        </div>
-                    ))}
+              {/* Amenities Section */}
+              <div>
+                <h3 className="font-headline text-2xl md:text-3xl font-bold mb-8">Amenities & Features</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
+                  {room.amenities.map((amenity) => (
+                    <div key={amenity.name} className="flex flex-col items-center text-center p-4 rounded-lg hover:bg-secondary/50 transition-colors">
+                      <div className="mb-3">
+                        {typeof amenity.icon === "string"
+                          ? amenityIcons[amenity.icon] || amenityIcons.default
+                          : amenity.icon}
+                      </div>
+                      <span className="text-sm font-medium">{amenity.name}</span>
+                    </div>
+                  ))}
                 </div>
+              </div>
             </div>
 
-            {/* Booking Card */}
+            {/* Right Column - Booking Card */}
             <div className="md:col-span-1">
-                <Card className="shadow-lg sticky top-24">
-                    <CardContent className="p-6">
-                        <h3 className="font-headline text-2xl font-bold mb-4">Book Your Stay</h3>
-                        <div className="flex items-baseline gap-2 mb-2">
-                            <p className="text-sm text-muted-foreground">Up to {room.capacity} Guests</p>
-                        </div>
-                        <div className="flex flex-wrap gap-2 mb-6">
-                            {room.highlights.map(highlight => (
-                                <Badge key={highlight} variant="secondary">{highlight}</Badge>
-                            ))}
-                        </div>
-                        <Button asChild size="lg" className="w-full mb-2">
-                            <a href={BOOKING_COM_URL} target="_blank" rel="noopener noreferrer">Book on Booking.com</a>
-                        </Button>
-                        <Button asChild size="lg" variant="outline" className="w-full">
-                            <Link href="/contact">Inquire Now</Link>
-                        </Button>
-                    </CardContent>
-                </Card>
+              <Card className="border-0 shadow-2xl sticky top-24 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
+                <CardContent className="p-8 relative">
+                  <div className="mb-6">
+                    <h3 className="font-headline text-2xl md:text-3xl font-bold mb-2">
+                      Plan Your Stay
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      Experience luxury in the heart of nature
+                    </p>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="h-px bg-gradient-to-r from-transparent via-muted to-transparent mb-6" />
+
+                  {/* Details */}
+                  <div className="space-y-4 mb-8">
+                    <div className="flex items-center gap-3">
+                      <Users className="h-5 w-5 text-primary" />
+                      <span className="text-sm">
+                        <span className="font-semibold">{room.capacity}</span> guests maximum
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="h-px bg-gradient-to-r from-transparent via-muted to-transparent mb-6" />
+
+                  {/* CTA Buttons */}
+                  <div className="space-y-3">
+                    <Button asChild size="lg" className="w-full font-semibold h-12">
+                      <a href={BOOKING_COM_URL} target="_blank" rel="noopener noreferrer">
+                        Book Now
+                      </a>
+                    </Button>
+                    <Button asChild size="lg" variant="outline" className="w-full font-semibold h-12 border-primary text-primary hover:bg-primary/5">
+                      <Link href="/contact">
+                        Send Inquiry
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
-        </section>
+          </section>
+        </div>
       </div>
     </>
   );
 }
 
 export async function generateStaticParams() {
-    return rooms.map((room) => ({
-      slug: room.slug,
-    }));
-  }
+  return rooms.filter((room) => room.isAvailable).map((room) => ({
+    slug: room.slug,
+  })) as Promise<{ slug: string }[]>;
+}
