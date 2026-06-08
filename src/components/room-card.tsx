@@ -3,8 +3,8 @@ import Link from 'next/link';
 import type { Room } from '@/lib/types';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, Wifi, Tv, Bath, Bed, Wine, Building, Trees, Sofa, Waves, Wind, AirVent } from 'lucide-react';
+import { Card, CardDescription, CardTitle } from '@/components/ui/card';
+import { Users, Wifi, Tv, Bath, Bed, Wine, Building, Trees, Sofa, Waves, Wind, AirVent, ArrowUpRight } from 'lucide-react';
 
 const FridgeIcon = ({className}: {className?: string}) => (
     <svg
@@ -43,67 +43,80 @@ const amenityIcons: { [key: string]: React.ReactNode } = {
 };
 
 export function RoomCard({ room }: { room: Room }) {
+  const sizeAmenity = room.amenities.find((amenity) => amenity.name.includes('m2'));
+  const bedAmenity = room.amenities.find((amenity) => amenity.name.includes('Bed'));
+  const viewAmenity = room.amenities.find((amenity) => amenity.name.includes('Views'));
+  const previewAmenities = room.amenities
+    .filter((amenity) => ![sizeAmenity?.name, bedAmenity?.name, viewAmenity?.name].includes(amenity.name))
+    .slice(0, 4);
+
   return (
-    <Card className="group relative flex h-full flex-col overflow-hidden border-primary/10 bg-card shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl">
-      <div className="relative w-full h-96">
+    <Card className="group grid h-full overflow-hidden border-primary/10 bg-card/95 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl lg:grid-rows-[minmax(360px,1fr)_auto]">
+      <div className="relative min-h-[360px] overflow-hidden">
         {room.images && room.images.length > 0 && (
           <Image
             src={room.images[0].imageUrl}
             alt={room.images[0].description}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 50vw"
             data-ai-hint={room.images[0].imageHint}
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-        <div className="absolute left-5 top-5 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary shadow-lg">
-          {room.capacity} guests
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/25 to-black/10" />
+        <div className="absolute left-5 top-5 rounded-full border border-white/20 bg-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-lg backdrop-blur-md">
+          Treehouse stay
         </div>
-
-        <div className="absolute bottom-0 left-0 p-6 text-white">
-          <CardTitle className="font-headline text-3xl font-normal">{room.name}</CardTitle>
-          <CardDescription className="pt-2 text-white/90 line-clamp-2">{room.description}</CardDescription>
+        <div className="absolute bottom-5 left-5 right-5 grid grid-cols-3 gap-2 text-white">
+          {[
+            { label: 'Guests', value: room.capacity },
+            { label: 'Space', value: sizeAmenity?.name.replace(' Treehouse', '') ?? 'Treehouse' },
+            { label: 'Beds', value: bedAmenity?.name ?? 'King Bed' },
+          ].map((item) => (
+            <div key={item.label} className="border border-white/15 bg-white/10 p-3 backdrop-blur-md">
+              <p className="text-[10px] uppercase tracking-[0.18em] text-white/60">{item.label}</p>
+              <p className="mt-1 text-sm font-semibold">{item.value}</p>
+            </div>
+          ))}
         </div>
       </div>
-      
-      <CardContent className="flex-grow p-6 bg-card">
-        <div className="grid grid-cols-2 gap-4 text-sm text-muted-foreground">
-          {room.amenities.slice(0, 4).map((amenity) => (
-            <div key={amenity.name} className="flex items-center gap-2" title={amenity.name}>
-              {typeof amenity.icon === 'string' ? amenityIcons[amenity.icon] : amenity.icon}
+
+      <div className="flex flex-col gap-6 p-6 md:p-7">
+        <div>
+          <div className="mb-4 flex flex-wrap gap-2">
+            {room.highlights.map((highlight) => (
+              <Badge key={highlight} variant="secondary" className="rounded-full border-primary/10 bg-secondary/80 px-3 py-1 font-medium">
+                {highlight}
+              </Badge>
+            ))}
+          </div>
+          <CardTitle className="font-headline text-3xl font-normal leading-tight md:text-4xl">{room.name}</CardTitle>
+          <CardDescription className="mt-3 line-clamp-3 text-sm leading-7 text-muted-foreground">
+            {room.description}
+          </CardDescription>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3">
+          {previewAmenities.map((amenity) => (
+            <div key={amenity.name} className="flex items-center gap-2 rounded-md border border-primary/10 bg-background/70 px-3 py-3 text-sm text-muted-foreground" title={amenity.name}>
+              <span className="text-accent">{typeof amenity.icon === 'string' ? amenityIcons[amenity.icon] : amenity.icon}</span>
               <span className="truncate">{amenity.name}</span>
             </div>
           ))}
         </div>
-      </CardContent>
 
-      <CardFooter className="p-6 pt-0 bg-card flex flex-col items-start gap-4">
-        <div className="flex flex-wrap gap-2">
-          {room.highlights.map((highlight) => (
-            <Badge key={highlight} variant="secondary" className="border-primary/10">
-              {highlight}
-            </Badge>
-          ))}
-          {!room.isAvailable && <Badge variant="destructive">Coming Soon</Badge>}
+        <div className="mt-auto flex flex-col gap-3 border-t border-border pt-5 sm:flex-row">
+          <Button asChild className="flex-1 justify-between">
+            <Link href={`/rooms/${room.slug}`}>
+              View Treehouse
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </Button>
+          <Button asChild variant="outline" className="flex-1 border-primary/20">
+            <Link href="/contact">Inquire</Link>
+          </Button>
         </div>
-        <div className="w-full flex gap-2">
-          {room.isAvailable ? (
-            <>
-              <Button asChild className="flex-grow">
-                <Link href={`/rooms/${room.slug}`}>View Details</Link>
-              </Button>
-              <Button asChild variant="secondary" className="flex-grow">
-                <Link href="/contact">Inquire Now</Link>
-              </Button>
-            </>
-          ) : (
-            <Button className="w-full" disabled>
-              Coming Soon
-            </Button>
-          )}
-        </div>
-      </CardFooter>
+      </div>
     </Card>
   );
 }
