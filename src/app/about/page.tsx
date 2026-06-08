@@ -47,7 +47,7 @@ export default function AboutPage() {
           <div className="order-2 md:order-1">
             <h2 className="font-headline text-3xl font-bold flex items-center gap-3"><Heart className="text-primary h-8 w-8"/>Our Story</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Vercour Sigiriya was born from a dream to create a sanctuary where people could reconnect with nature without sacrificing comfort. Founded by a family of nature lovers, our hotel was built with a deep respect for the environment. Every stone, every piece of wood, and every plant has been carefully chosen to create a harmonious space that feels like a home away from home. We started with just a few cabanas and a big vision, and have grown thanks to the wonderful guests who share our passion for tranquility and sustainability.
+              Vercour Sigiriya was born from a dream to create a sanctuary where people could reconnect with nature without sacrificing comfort. Founded by a family of nature lovers, our hotel was built with a deep respect for the environment. Every stone, every piece of wood, and every plant has been carefully chosen to create a harmonious space that feels like a home away from home. We keep the experience intimate with only two treehouses and a big vision, shaped by wonderful guests who share our passion for tranquility and sustainability.
             </p>
           </div>
           <div className="order-1 md:order-2">
@@ -85,7 +85,7 @@ export default function AboutPage() {
           <div>
             <h2 className="font-headline text-3xl font-bold flex items-center gap-3"><Leaf className="text-primary h-8 w-8"/>Our Eco-Friendly Mission</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Sustainability is at the core of everything we do. We are committed to minimizing our environmental footprint through various initiatives, including using renewable energy sources, practicing waste reduction and recycling, conserving water, and sourcing local and organic produce for our kitchen. Our cabanas are constructed from reclaimed and sustainable materials. By staying with us, you are supporting a business that cares deeply for the planet and the local community.
+              Sustainability is at the core of everything we do. We are committed to minimizing our environmental footprint through various initiatives, including using renewable energy sources, practicing waste reduction and recycling, conserving water, and sourcing local and organic produce for our kitchen. Our treehouses are constructed with care for the surrounding landscape. By staying with us, you are supporting a business that cares deeply for the planet and the local community.
             </p>
           </div>
         </section>

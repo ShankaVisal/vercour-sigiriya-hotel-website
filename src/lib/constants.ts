@@ -1,5 +1,5 @@
 
-export const BOOKING_COM_URL = 'https://www.booking.com';
+export const BOOKING_COM_URL = 'https://www.booking.com/hotel/lk/vercour-sigiriya.html';
 export const AGODA_URL = 'https://www.agoda.com';
 export const AIRBNB_URL = 'https://www.airbnb.com';
 
@@ -11,4 +11,3 @@ export const HOTEL_LOCATION_GMAPS_URL = 'https://www.google.com/maps/embed?pb=!1
 export const HOTEL_EMAIL = 'damithcx@gmail.com';
 export const HOTEL_PHONE = '+94 77 645 6566';
 export const HOTEL_ADDRESS = 'Vercour Sigiriya, Sigiriya, Sri Lanka';
-

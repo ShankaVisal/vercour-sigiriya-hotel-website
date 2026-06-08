@@ -14,14 +14,12 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const metadata: Metadata = {
   title: 'Pricing & Rates',
-  description: 'View the room rates for our cabanas at Vercour Sigiriya. Find pricing for all seasons and book your stay.',
+  description: 'Check rates for the two Vercour Sigiriya treehouses and book your stay.',
 };
 
 const pricingData = [
-  { roomType: 'Standard Garden Cabana', lowSeason: '$100', highSeason: '$150' },
-  { roomType: 'Deluxe Jungle Cabana', lowSeason: '$130', highSeason: '$180' },
-  { roomType: 'Family Garden Cabana', lowSeason: '$180', highSeason: '$250' },
-  { roomType: 'Honeymoon Suite', lowSeason: '$220', highSeason: '$300' },
+  { roomType: 'Vercour Couple Treehouse', occupancy: 'Up to 2 guests', beds: '1 king bed' },
+  { roomType: 'Vercour Family Treehouse', occupancy: 'Up to 4 guests', beds: '2 king beds' },
 ];
 
 export default function PricingPage() {
@@ -46,7 +44,7 @@ export default function PricingPage() {
             Our Rates
           </h1>
           <p className="mt-4 max-w-2xl text-lg">
-            Transparent pricing for your perfect getaway. Rates are per night and include breakfast.
+            Rates vary by date and availability. Contact us or book online for the latest price.
           </p>
         </div>
       </section>
@@ -55,27 +53,27 @@ export default function PricingPage() {
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto">
             <Table>
-              <TableCaption>All prices are in USD and subject to taxes and service charges. Please contact us for custom packages.</TableCaption>
+              <TableCaption>Both treehouses include free WiFi, private parking, balcony or terrace access, and tea/coffee facilities.</TableCaption>
               <TableHeader>
                 <TableRow>
                   <TableHead className="w-[50%]">Room Type</TableHead>
-                  <TableHead className="text-right">Low Season Rate</TableHead>
-                  <TableHead className="text-right">High Season Rate</TableHead>
+                  <TableHead className="text-right">Occupancy</TableHead>
+                  <TableHead className="text-right">Beds</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {pricingData.map((item) => (
                   <TableRow key={item.roomType}>
                     <TableCell className="font-medium">{item.roomType}</TableCell>
-                    <TableCell className="text-right">{item.lowSeason}</TableCell>
-                    <TableCell className="text-right">{item.highSeason}</TableCell>
+                    <TableCell className="text-right">{item.occupancy}</TableCell>
+                    <TableCell className="text-right">{item.beds}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
             <div className="mt-8 space-y-4 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2"><Badge variant="secondary">Low Season</Badge> May to June, September to October</div>
-                <div className="flex items-center gap-2"><Badge variant="default">High Season</Badge> July to August, November to April</div>
+                <div className="flex items-center gap-2"><Badge variant="secondary">Check-in</Badge> 12:00 PM to 12:00 AM</div>
+                <div className="flex items-center gap-2"><Badge variant="default">Check-out</Badge> 6:00 AM to 11:00 AM</div>
             </div>
         </div>
       </div>

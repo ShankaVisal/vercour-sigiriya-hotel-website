@@ -47,8 +47,8 @@ export default function Home() {
   const highlights = [
     {
       icon: <Leaf className="h-10 w-10 text-primary" />,
-      title: 'Eco-Friendly Cabanas',
-      description: 'Our cabanas are built with sustainable materials, blending seamlessly with the natural surroundings.',
+      title: 'Eco-Friendly Treehouses',
+      description: 'Our two treehouses are built to blend comfortably with the natural surroundings.',
     },
     {
       icon: <Wind className="h-10 w-10 text-primary" />,
@@ -195,7 +195,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Featured Rooms</h2>
             <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
-              Discover our signature cabanas, designed for comfort and immersion in nature.
+              Discover our two signature treehouses, designed for comfort and immersion in nature.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

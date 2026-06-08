@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const metadata: Metadata = {
-  title: 'Our Rooms & Cabanas',
-  description: 'Explore our range of eco-friendly cabanas, from cozy standard rooms to spacious family suites. Find the perfect accommodation for your stay in Sigiriya.',
+  title: 'Our Treehouses',
+  description: 'Explore the two eco-friendly Vercour Sigiriya treehouses: the Couple Treehouse and Family Treehouse.',
 };
 
 export default function RoomsPage() {
@@ -27,10 +27,10 @@ export default function RoomsPage() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
           <h1 className="font-headline text-4xl md:text-6xl font-bold">
-            Our Rooms & Cabanas
+            Our Treehouses
           </h1>
           <p className="mt-4 max-w-2xl text-lg">
-            Each of our cabanas is thoughtfully designed to offer a peaceful retreat, blending modern comforts with the beauty of nature.
+            Choose between our two elevated stays: one treehouse for couples and one spacious treehouse for families.
           </p>
         </div>
       </section>

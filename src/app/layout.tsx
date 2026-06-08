@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     default: 'Vercour Sigiriya – Eco-Friendly Hotel',
     template: '%s | Vercour Sigiriya',
   },
-  description: 'Experience nature and comfort in the heart of Sigiriya. Eco-friendly cabanas in a peaceful environment, close to Sigiriya Rock.',
-  keywords: ['hotel', 'sigiriya', 'sri lanka', 'eco-friendly', 'nature resort', 'cabana', 'booking', 'vercour'],
+  description: 'Experience nature and comfort in the heart of Sigiriya. Two eco-friendly treehouses in a peaceful environment, close to Sigiriya Rock.',
+  keywords: ['hotel', 'sigiriya', 'sri lanka', 'eco-friendly', 'nature resort', 'treehouse', 'booking', 'vercour'],
 };
 
 export default function RootLayout({
