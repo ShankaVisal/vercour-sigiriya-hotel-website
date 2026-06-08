@@ -36,7 +36,7 @@ export default function NatureGardenPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative h-[50vh] w-full">
+      <section className="relative h-[60vh] w-full">
         {heroImage && (
             <Image
               src={heroImage.imageUrl}
@@ -47,12 +47,13 @@ export default function NatureGardenPage() {
               data-ai-hint={heroImage.imageHint}
             />
         )}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-primary/90" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
-          <h1 className="font-headline text-4xl md:text-6xl font-bold">
+          <p className="eyebrow text-white/80">The living heart</p>
+          <h1 className="mt-4 font-headline text-5xl font-normal md:text-7xl">
             Our Nature Garden
           </h1>
-          <p className="mt-4 max-w-2xl text-lg">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85">
             A tranquil oasis designed for peace, reflection, and a deep connection with nature.
           </p>
         </div>
@@ -62,8 +63,9 @@ export default function NatureGardenPage() {
       <div className="container mx-auto px-4 py-16 md:py-24 space-y-20">
         {/* Description Section */}
         <section className="text-center">
-          <h2 className="font-headline text-3xl font-bold">A Serene Garden Experience</h2>
-          <p className="mt-4 max-w-3xl mx-auto text-muted-foreground leading-relaxed">
+          <p className="eyebrow">Garden rhythm</p>
+          <h2 className="mt-3 font-headline text-4xl font-normal md:text-6xl">A slower path through shade, birdsong, and tropical green</h2>
+          <p className="mt-5 max-w-3xl mx-auto text-muted-foreground leading-8">
             Our nature garden is the heart of Vercour Sigiriya. More than just a collection of plants, it is a living, breathing ecosystem designed to soothe the soul and delight the senses. From the moment you step in, you'll be enveloped by the gentle rustle of leaves, the sweet fragrance of tropical flowers, and the symphony of birdsong. It is a space to wander, to wonder, and to find your inner peace.
           </p>
         </section>
@@ -71,7 +73,7 @@ export default function NatureGardenPage() {
         {/* Image Grid */}
         <section className="grid md:grid-cols-2 gap-8 items-center">
             {gardenImage1 && (
-                <Card className="overflow-hidden shadow-lg">
+                <Card className="image-frame">
                     <Image 
                         src={gardenImage1.imageUrl} 
                         alt={gardenImage1.description} 
@@ -83,7 +85,7 @@ export default function NatureGardenPage() {
                 </Card>
             )}
             {gardenImage2 && (
-                <Card className="overflow-hidden shadow-lg">
+                <Card className="image-frame">
                     <Image 
                         src={gardenImage2.imageUrl} 
                         alt={gardenImage2.description} 
@@ -100,7 +102,7 @@ export default function NatureGardenPage() {
         <section>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {highlights.map((highlight) => (
-              <Card key={highlight.title} className="text-center p-6 flex flex-col items-center">
+              <Card key={highlight.title} className="text-center p-8 flex flex-col items-center border-primary/10 shadow-sm">
                 {highlight.icon}
                 <h3 className="mt-4 font-headline text-xl font-semibold">{highlight.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{highlight.description}</p>

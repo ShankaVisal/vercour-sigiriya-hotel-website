@@ -6,7 +6,7 @@ import { Star } from 'lucide-react';
 
 export function ReviewCard({ review }: { review: Review }) {
   return (
-    <Card className="h-full flex flex-col">
+    <Card className="h-full flex flex-col border-primary/10 bg-card/90 shadow-sm">
       <CardHeader className="flex flex-row items-center gap-4">
         <Avatar>
           {review.avatar && <AvatarImage src={review.avatar.imageUrl} alt={review.name} data-ai-hint={review.avatar.imageHint} />}

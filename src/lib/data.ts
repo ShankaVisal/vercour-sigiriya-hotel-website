@@ -3,7 +3,7 @@ import { PlaceHolderImages } from './placeholder-images';
 
 export const navLinks: NavLink[] = [
   { href: '/', label: 'Home' },
-  { href: '/rooms', label: 'Rooms' },
+  { href: '/rooms', label: 'Treehouses' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/about', label: 'About Us' },
   { href: '/nature-garden', label: 'Nature Garden' },

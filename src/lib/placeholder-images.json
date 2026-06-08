@@ -14,19 +14,19 @@
     },
     {
       "id": "room-deluxe",
-      "description": "Interior of a deluxe cabana with a view of the garden",
+      "description": "Interior of a luxury treehouse with a view of the garden",
       "imageUrl": "https://images.unsplash.com/photo-1750271336583-a6d9e975015c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxydXN0aWMlMjBiZWRyb29tfGVufDB8fHx8MTc2MzUzODU4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "rustic bedroom"
     },
     {
       "id": "room-standard",
-      "description": "Interior of a standard cabana with wooden furniture",
+      "description": "Interior of a treehouse with wooden furniture",
       "imageUrl": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxob3RlbCUyMHJvb218ZW58MHx8fHwxNzYzNTIzNDQwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "hotel room"
     },
     {
       "id": "room-family",
-      "description": "Spacious family cabana with multiple beds",
+      "description": "Spacious family treehouse with multiple beds",
       "imageUrl": "https://images.unsplash.com/photo-1680703486830-1b5af60635d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYWJpbiUyMGludGVyaW9yfGVufDB8fHx8MTc2MzUyNTgxOHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "cabin interior"
     },
@@ -68,7 +68,7 @@
     },
     {
       "id": "gallery6",
-      "description": "Exterior view of a cabana surrounded by trees",
+      "description": "Exterior view of a treehouse surrounded by trees",
       "imageUrl": "https://images.unsplash.com/photo-1558983925-7cd5dd39079b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxqdW5nbGUlMjBjYWJpbnxlbnwwfHx8fDE3NjM1Mzg1ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "jungle cabin"
     },
@@ -110,7 +110,7 @@
     },
     {
       "id": "about-story",
-      "description": "Founders of the hotel smiling in front of a cabana",
+      "description": "Founders of the hotel smiling in front of a treehouse",
       "imageUrl": "https://images.unsplash.com/photo-1491582990992-68ec88e070a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxoYXBweSUyMGNvdXBsZXxlbnwwfHx8fDE3NjM1Mzg1ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "happy couple"
     },

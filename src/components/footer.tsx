@@ -28,14 +28,17 @@ export function Footer() {
   const logo = PlaceHolderImages.find(p => p.id === 'logo');
 
   return (
-    <footer className="bg-background text-foreground">
+    <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {/* About Section */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
-              {logo && <Image src={logo.imageUrl} alt={logo.description} width={140} height={40} className="w-36 h-auto" />}
+              {logo && <Image src={logo.imageUrl} alt={logo.description} width={140} height={40} className="w-36 h-auto invert brightness-0" />}
             </Link>
+            <p className="max-w-xs text-sm text-primary-foreground/70">
+              Two intimate treehouses wrapped in garden views, warm timber, and quiet Sigiriya mornings.
+            </p>
           </div>
 
           {/* Quick Links Section */}
@@ -44,7 +47,7 @@ export function Footer() {
             <ul className="space-y-2">
               {navLinks.slice(0, 5).map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link href={link.href} className="text-sm text-primary-foreground/70 hover:text-accent transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -58,7 +61,7 @@ export function Footer() {
             <ul className="space-y-2">
               {contactInfo.map((item, index) => (
                 <li key={index}>
-                  <a href={item.href} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href={item.href} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm text-primary-foreground/70 hover:text-accent transition-colors">
                     <span className='pt-1'>{item.icon}</span>
                     <span>{item.text}</span>
                   </a>
@@ -72,27 +75,27 @@ export function Footer() {
             <h4 className="font-semibold font-headline">Booking & Social</h4>
             <ul className="space-y-2">
                 <li>
-                    <a href={BOOKING_COM_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Booking.com</a>
+                    <a href={BOOKING_COM_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-primary-foreground/70 hover:text-accent transition-colors">Booking.com</a>
                 </li>
                 <li>
-                    <a href={AGODA_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Agoda</a>
+                    <a href={AGODA_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-primary-foreground/70 hover:text-accent transition-colors">Agoda</a>
                 </li>
                 <li>
-                    <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Airbnb</a>
+                    <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-primary-foreground/70 hover:text-accent transition-colors">Airbnb</a>
                 </li>
             </ul>
             <div className="flex space-x-4 pt-4">
                 {socialLinks.map(link => (
-                    <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={link.name}>
+                    <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-accent transition-colors" aria-label={link.name}>
                         {link.icon}
                     </a>
                 ))}
             </div>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
+        <div className="mt-8 pt-8 border-t border-white/10 text-center text-sm text-primary-foreground/60">
           <p>&copy; {new Date().getFullYear()} Vercour Sigiriya. All Rights Reserved.</p>
-          <p>Developed by <a href="https://www.taproit.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">Tapro IT</a></p>
+          <p>Developed by <a href="https://www.taproit.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent transition-colors">Tapro IT</a></p>
         </div>
       </div>
     </footer>

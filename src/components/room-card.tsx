@@ -44,7 +44,7 @@ const amenityIcons: { [key: string]: React.ReactNode } = {
 
 export function RoomCard({ room }: { room: Room }) {
   return (
-    <Card className="group relative flex flex-col overflow-hidden h-full shadow-lg transition-all hover:shadow-2xl">
+    <Card className="group relative flex h-full flex-col overflow-hidden border-primary/10 bg-card shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl">
       <div className="relative w-full h-96">
         {room.images && room.images.length > 0 && (
           <Image
@@ -56,10 +56,13 @@ export function RoomCard({ room }: { room: Room }) {
             data-ai-hint={room.images[0].imageHint}
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+        <div className="absolute left-5 top-5 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary shadow-lg">
+          {room.capacity} guests
+        </div>
 
         <div className="absolute bottom-0 left-0 p-6 text-white">
-          <CardTitle className="font-headline text-3xl">{room.name}</CardTitle>
+          <CardTitle className="font-headline text-3xl font-normal">{room.name}</CardTitle>
           <CardDescription className="pt-2 text-white/90 line-clamp-2">{room.description}</CardDescription>
         </div>
       </div>
@@ -78,7 +81,7 @@ export function RoomCard({ room }: { room: Room }) {
       <CardFooter className="p-6 pt-0 bg-card flex flex-col items-start gap-4">
         <div className="flex flex-wrap gap-2">
           {room.highlights.map((highlight) => (
-            <Badge key={highlight} variant="secondary">
+            <Badge key={highlight} variant="secondary" className="border-primary/10">
               {highlight}
             </Badge>
           ))}

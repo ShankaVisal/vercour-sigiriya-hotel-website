@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import type { Attraction } from '@/lib/types';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Check, Clock, Car } from 'lucide-react';
 
 export function AttractionCard({ attraction }: { attraction: Attraction }) {
@@ -11,7 +10,7 @@ export function AttractionCard({ attraction }: { attraction: Attraction }) {
   ];
 
   return (
-    <Card className="overflow-hidden shadow-lg group transition-all hover:shadow-xl">
+    <Card className="overflow-hidden border-primary/10 shadow-xl group transition-all hover:-translate-y-1 hover:shadow-2xl">
       <div className="grid md:grid-cols-5 gap-0">
         {/* Image Section */}
         <div className="relative w-full h-64 md:h-auto md:col-span-2">
@@ -30,17 +29,17 @@ export function AttractionCard({ attraction }: { attraction: Attraction }) {
         {/* Content Section */}
         <div className="md:col-span-3">
           <CardHeader>
-            <CardTitle className="font-headline text-2xl">{attraction.name}</CardTitle>
+            <CardTitle className="font-headline text-3xl font-normal">{attraction.name}</CardTitle>
             <CardDescription className="pt-2">{attraction.description}</CardDescription>
           </CardHeader>
           <CardContent>
             {/* Highlights */}
             <div>
-              <h4 className="font-semibold mb-3">Highlights:</h4>
+              <h4 className="font-semibold mb-3 text-primary">Highlights</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {attraction.highlights.map((highlight, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <Check className="h-4 w-4 text-primary mt-1 shrink-0" />
+                    <Check className="h-4 w-4 text-accent mt-1 shrink-0" />
                     <span>{highlight}</span>
                   </li>
                 ))}

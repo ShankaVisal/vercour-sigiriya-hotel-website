@@ -80,7 +80,7 @@ export default async function RoomPage({ params }: Props) {
   return (
     <>
       {/* Hero Section with Gradient Overlay */}
-      <section className="relative h-96 md:h-[500px] w-full">
+      <section className="relative h-[70vh] min-h-[520px] w-full">
         {room.images.length > 0 && (
           <Image
             src={room.images[0].imageUrl}
@@ -90,13 +90,14 @@ export default async function RoomPage({ params }: Props) {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/45 to-primary/95" />
         <div className="relative z-10 flex h-full flex-col items-center justify-end text-center text-white p-4 pb-12">
           <div className="max-w-3xl">
-            <h1 className="font-headline text-4xl md:text-5xl font-bold mb-3 tracking-tight">
+            <p className="eyebrow text-white/80">Private treehouse stay</p>
+            <h1 className="mt-4 font-headline text-5xl font-normal md:text-7xl mb-3 tracking-tight">
               {room.name}
             </h1>
-            <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg leading-8 text-white/85 max-w-2xl mx-auto">
               {room.description}
             </p>
           </div>
@@ -104,11 +105,12 @@ export default async function RoomPage({ params }: Props) {
       </section>
 
       {/* Main Content */}
-      <div className="bg-gradient-to-b from-background to-secondary/10">
+      <div className="bg-gradient-to-b from-background to-secondary/20">
         <div className="container mx-auto px-4 py-20 md:py-32">
           {/* Image Gallery Carousel */}
           <section className="mb-24">
-            <h2 className="font-headline text-3xl font-bold mb-8">Photo Gallery</h2>
+            <p className="eyebrow">Look around</p>
+            <h2 className="mt-3 font-headline text-4xl font-normal md:text-6xl mb-8">Photo Gallery</h2>
             <RoomGalleryCarousel images={room.images} />
           </section>
 
@@ -118,18 +120,20 @@ export default async function RoomPage({ params }: Props) {
             <div className="md:col-span-2 space-y-12">
               {/* About Section */}
               <div>
-                <h2 className="font-headline text-3xl md:text-4xl font-bold mb-6">About {room.name}</h2>
-                <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                <p className="eyebrow">The stay</p>
+                <h2 className="mt-3 font-headline text-4xl md:text-5xl font-normal mb-6">About {room.name}</h2>
+                <p className="text-muted-foreground text-lg leading-8 mb-4">
                   {room.longDescription}
                 </p>
               </div>
 
               {/* Amenities Section */}
               <div>
-                <h3 className="font-headline text-2xl md:text-3xl font-bold mb-8">Amenities & Features</h3>
+                <p className="eyebrow">Included comforts</p>
+                <h3 className="mt-3 font-headline text-3xl md:text-5xl font-normal mb-8">Amenities & Features</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
                   {room.amenities.map((amenity) => (
-                    <div key={amenity.name} className="flex flex-col items-center text-center p-4 rounded-lg hover:bg-secondary/50 transition-colors">
+                    <div key={amenity.name} className="flex flex-col items-center text-center p-4 rounded-lg border border-primary/10 bg-card/70 transition-colors hover:bg-secondary/50">
                       <div className="mb-3">
                         {typeof amenity.icon === "string"
                           ? amenityIcons[amenity.icon] || amenityIcons.default
@@ -144,15 +148,15 @@ export default async function RoomPage({ params }: Props) {
 
             {/* Right Column - Booking Card */}
             <div className="md:col-span-1">
-              <Card className="border-0 shadow-2xl sticky top-24 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
+              <Card className="canopy-panel sticky top-24 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
                 <CardContent className="p-8 relative">
                   <div className="mb-6">
-                    <h3 className="font-headline text-2xl md:text-3xl font-bold mb-2">
+                    <h3 className="font-headline text-3xl font-normal mb-2">
                       Plan Your Stay
                     </h3>
-                    <p className="text-muted-foreground text-sm">
-                      Experience luxury in the heart of nature
+                      <p className="text-primary-foreground/70 text-sm">
+                      Experience quiet luxury in the heart of nature
                     </p>
                   </div>
 
@@ -162,7 +166,7 @@ export default async function RoomPage({ params }: Props) {
                   {/* Details */}
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center gap-3">
-                      <Users className="h-5 w-5 text-primary" />
+                      <Users className="h-5 w-5 text-accent" />
                       <span className="text-sm">
                         <span className="font-semibold">{room.capacity}</span> guests maximum
                       </span>
@@ -179,7 +183,7 @@ export default async function RoomPage({ params }: Props) {
                         Book Now
                       </a>
                     </Button>
-                    <Button asChild size="lg" variant="outline" className="w-full font-semibold h-12 border-primary text-primary hover:bg-primary/5">
+                    <Button asChild size="lg" variant="outline" className="w-full font-semibold h-12 border-white/40 bg-white/10 text-primary-foreground hover:bg-white hover:text-primary">
                       <Link href="/contact">
                         Send Inquiry
                       </Link>

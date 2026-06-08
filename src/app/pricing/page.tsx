@@ -27,7 +27,7 @@ export default function PricingPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative h-[50vh] w-full">
+      <section className="relative h-[60vh] w-full">
         {heroImage && (
             <Image
               src={heroImage.imageUrl}
@@ -38,12 +38,13 @@ export default function PricingPage() {
               data-ai-hint={heroImage.imageHint}
             />
         )}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/40 to-primary/90" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
-          <h1 className="font-headline text-4xl md:text-6xl font-bold">
+          <p className="eyebrow text-white/80">Rates and details</p>
+          <h1 className="mt-4 font-headline text-5xl font-normal md:text-7xl">
             Our Rates
           </h1>
-          <p className="mt-4 max-w-2xl text-lg">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85">
             Rates vary by date and availability. Contact us or book online for the latest price.
           </p>
         </div>
@@ -52,6 +53,10 @@ export default function PricingPage() {
       {/* Pricing Table */}
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto">
+            <div className="mb-8 text-center">
+              <p className="eyebrow">Only two treehouses</p>
+              <h2 className="mt-3 font-headline text-4xl font-normal md:text-5xl">Simple options, personal service</h2>
+            </div>
             <Table>
               <TableCaption>Both treehouses include free WiFi, private parking, balcony or terrace access, and tea/coffee facilities.</TableCaption>
               <TableHeader>

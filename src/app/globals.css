@@ -8,30 +8,30 @@ body {
 
 @layer base {
   :root {
-    --background: 35 33% 97%; /* Light wood/beige */
-    --foreground: 20 15% 15%; /* Dark brown/black */
-    --card: 0 0% 100%; /* White */
-    --card-foreground: 20 15% 15%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 15% 15%;
-    --primary: 100 35% 25%; /* Dark Green from logo */
-    --primary-foreground: 100 20% 95%;
-    --secondary: 35 30% 92%;
-    --secondary-foreground: 20 15% 20%;
-    --muted: 35 30% 92%;
-    --muted-foreground: 20 10% 45%;
-    --accent: 30 30% 65%; /* Wood brown for accents */
-    --accent-foreground: 20 15% 15%;
+    --background: 38 35% 96%;
+    --foreground: 38 24% 12%;
+    --card: 42 38% 98%;
+    --card-foreground: 38 24% 12%;
+    --popover: 42 38% 98%;
+    --popover-foreground: 38 24% 12%;
+    --primary: 139 34% 18%;
+    --primary-foreground: 44 45% 94%;
+    --secondary: 44 29% 88%;
+    --secondary-foreground: 38 24% 14%;
+    --muted: 41 25% 90%;
+    --muted-foreground: 38 12% 38%;
+    --accent: 34 48% 48%;
+    --accent-foreground: 44 45% 96%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 35 20% 85%;
-    --input: 35 20% 88%;
-    --ring: 100 35% 25%;
-    --chart-1: 100 35% 25%;
-    --chart-2: 30 30% 65%;
-    --chart-3: 100 30% 40%;
-    --chart-4: 30 25% 75%;
-    --chart-5: 40 20% 85%;
+    --border: 39 22% 82%;
+    --input: 39 22% 86%;
+    --ring: 139 34% 18%;
+    --chart-1: 139 34% 18%;
+    --chart-2: 34 48% 48%;
+    --chart-3: 91 26% 33%;
+    --chart-4: 196 20% 37%;
+    --chart-5: 42 28% 73%;
     --radius: 0.5rem;
   }
   .dark {
@@ -68,5 +68,30 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(circle at top left, hsl(139 34% 18% / 0.08), transparent 28rem),
+      linear-gradient(180deg, hsl(var(--background)), hsl(40 30% 92%));
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+}
+
+@layer components {
+  .luxury-section {
+    @apply py-16 md:py-24;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.28em] text-accent;
+  }
+
+  .canopy-panel {
+    @apply border border-white/10 bg-primary text-primary-foreground shadow-2xl;
+  }
+
+  .image-frame {
+    @apply overflow-hidden rounded-lg shadow-2xl ring-1 ring-black/10;
   }
 }

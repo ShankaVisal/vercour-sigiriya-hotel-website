@@ -39,11 +39,11 @@ export function Header() {
     'fixed top-0 z-50 w-full transition-all duration-300',
     isHomePage && !isScrolled
       ? 'bg-transparent text-white'
-      : 'bg-background/95 text-foreground shadow-md backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b'
+      : 'border-b border-primary/10 bg-background/90 text-foreground shadow-sm backdrop-blur-xl supports-[backdrop-filter]:bg-background/75'
   );
 
   const linkClasses = cn(
-    'transition-colors hover:text-primary',
+    'transition-colors hover:text-accent',
     isHomePage && !isScrolled ? 'text-white' : 'text-foreground/70'
   );
 
@@ -76,7 +76,7 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-4">
           <NavLinks />
-          <Button asChild variant={isHomePage && !isScrolled ? "outline" : "default"} size="sm">
+          <Button asChild variant={isHomePage && !isScrolled ? "outline" : "default"} size="sm" className={cn(isHomePage && !isScrolled && "border-white/70 bg-white/10 text-white hover:bg-white hover:text-primary")}>
             <Link href="/contact">Book Now</Link>
           </Button>
         </div>

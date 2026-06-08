@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Leaf, Mountain, Wind, ArrowRight, Plane, Users, Wifi, Utensils, Waves, Star } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card';
+import { Leaf, Mountain, Wind, ArrowRight, Plane, Users, Wifi, Utensils, Waves, Star, Trees, Sparkles } from 'lucide-react';
 import { RoomCard } from '@/components/room-card';
 import { rooms } from '@/lib/data';
 import { MapEmbed } from '@/components/map-embed';
@@ -46,19 +46,19 @@ export default function Home() {
 
   const highlights = [
     {
-      icon: <Leaf className="h-10 w-10 text-primary" />,
-      title: 'Eco-Friendly Treehouses',
-      description: 'Our two treehouses are built to blend comfortably with the natural surroundings.',
+      icon: <Trees className="h-10 w-10 text-accent" />,
+      title: 'Two Private Treehouses',
+      description: 'A couple treehouse and a family treehouse, both designed as intimate stays above the garden.',
     },
     {
-      icon: <Wind className="h-10 w-10 text-primary" />,
-      title: 'Peaceful Environment',
-      description: 'Escape the hustle and bustle. Enjoy the serene and tranquil atmosphere of our lush gardens.',
+      icon: <Sparkles className="h-10 w-10 text-accent" />,
+      title: 'Boutique Nature Luxury',
+      description: 'Warm timber textures, private balconies, air-conditioned comfort, and quiet views of Sigiriya.',
     },
     {
-      icon: <Mountain className="h-10 w-10 text-primary" />,
-      title: 'Close to Sigiriya Rock',
-      description: 'We are located just a short distance from the iconic Sigiriya Rock Fortress and other major attractions.',
+      icon: <Mountain className="h-10 w-10 text-accent" />,
+      title: 'Sigiriya Within Reach',
+      description: 'A peaceful base near Sigiriya Rock, Pidurangala, village experiences, and wildlife safaris.',
     },
   ];
 
@@ -76,7 +76,7 @@ export default function Home() {
     {
       icon: <Wifi className="h-10 w-10 text-primary" />,
       title: 'Wifi',
-      description: 'We offer complimentary WiFi and internet access in all rooms and throughout the hotel premises.',
+      description: 'We offer complimentary WiFi in both treehouses and shared guest areas.',
     },
     {
       icon: <LaundryIcon />,
@@ -98,7 +98,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-screen w-full">
+      <section className="relative min-h-screen w-full">
         <Image
           src="/assest/1.2.jpg"
           alt="Vercour Sigiriya hero view"
@@ -106,30 +106,53 @@ export default function Home() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
-          <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-normal tracking-wider">
-            Vercour Sigiriya
-          </h1>
-          <p className="mt-4 max-w-2xl text-md md:text-lg tracking-wide">
-            The eco-conscious haven of warmth, tranquility and restoration
-          </p>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-primary/95" />
+        <div className="relative z-10 flex min-h-screen flex-col justify-end text-white">
+          <div className="container mx-auto px-4 pb-10 pt-32 md:pb-16">
+            <p className="eyebrow text-white/80">Luxury treehouse retreat in Sigiriya</p>
+            <h1 className="mt-5 max-w-5xl font-headline text-5xl font-normal leading-tight md:text-7xl lg:text-8xl">
+              Vercour Sigiriya
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-white/85 md:text-xl">
+              Two elevated treehouses, garden mornings, private balconies, and warm Sri Lankan hospitality near the cultural heart of Sigiriya.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                <Link href="/rooms">Explore Treehouses <ArrowRight className="ml-2 h-5 w-5" /></Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-white/60 bg-white/10 text-white hover:bg-white hover:text-primary">
+                <Link href="/contact">Plan Your Stay</Link>
+              </Button>
+            </div>
+            <div className="mt-12 grid gap-3 md:grid-cols-3">
+              {[
+                ['2', 'private treehouses'],
+                ['6.6 km', 'to Sigiriya Rock'],
+                ['12 PM', 'check-in begins'],
+              ].map(([value, label]) => (
+                <div key={label} className="border border-white/15 bg-white/10 p-5 backdrop-blur-md">
+                  <p className="font-headline text-4xl">{value}</p>
+                  <p className="mt-1 text-sm uppercase tracking-[0.2em] text-white/70">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Welcome Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="luxury-section bg-background">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
-            <p className="text-sm uppercase tracking-widest text-primary">Welcome To</p>
-            <h2 className="font-headline text-3xl md:text-4xl font-bold mt-2">Vercour Sigiriya, An Eco-Luxe Reserve</h2>
-            <p className="font-medium text-lg mt-4 mb-6">Ayubowan (May you live long)</p>
-            <div className="space-y-4 text-muted-foreground">
-              <p>Stretching inland from the heart of Sri Lanka's cultural triangle, the untamed wilderness feel of our sanctuary blankets the area around Sigiriya. At the edge of the wild is a one-of-a-kind experience, bringing together unparalleled nature experiences and sublime jungle dwellings.</p>
-              <p>Nestled amidst lush greenery just beyond the borders of ancient kingdoms, Vercour Sigiriya is one of the premier locations in the world for history buffs, nature lovers, and adventurers. Our jungle dwellings provide an immersive experience among the sights and sounds of the island's remarkable fauna and flora.</p>
+            <p className="eyebrow">Welcome to the canopy</p>
+            <h2 className="font-headline text-4xl md:text-6xl font-normal mt-3">A small treehouse hideaway with a luxury lodge soul</h2>
+            <p className="font-medium text-lg mt-5 mb-6 text-primary">Ayubowan. May you live long.</p>
+            <div className="space-y-5 text-muted-foreground leading-8">
+              <p>Vercour Sigiriya is intentionally intimate: only two treehouses, each wrapped in garden views and designed for slow mornings, soft light, and calm evenings after exploring Sri Lanka's cultural triangle.</p>
+              <p>Expect private balconies, air-conditioned rooms, warm timber details, tea and coffee in-room, and the hush of a garden that lets the treehouse experience feel close to nature without losing comfort.</p>
             </div>
           </div>
-          <div className="order-1 md:order-2 rounded-lg overflow-hidden shadow-lg">
+          <div className="order-1 md:order-2 image-frame">
             {sigiriyaWelcomeImage &&
               <Image 
                 src={sigiriyaWelcomeImage.imageUrl} 
@@ -145,14 +168,14 @@ export default function Home() {
       </section>
 
       {/* Highlights Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="luxury-section bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {highlights.map((highlight) => (
-              <div key={highlight.title} className="text-center flex flex-col items-center">
+              <div key={highlight.title} className="text-center flex flex-col items-center border border-white/10 p-8">
                 {highlight.icon}
-                <h3 className="mt-4 font-headline text-xl font-semibold">{highlight.title}</h3>
-                <p className="mt-2 text-muted-foreground">{highlight.description}</p>
+                <h3 className="mt-4 font-headline text-2xl font-normal">{highlight.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-primary-foreground/70">{highlight.description}</p>
               </div>
             ))}
           </div>
@@ -160,22 +183,22 @@ export default function Home() {
       </section>
       
       {/* Essentials Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="luxury-section bg-background">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-stretch">
-          <div className="relative min-h-[500px] lg:min-h-full">
+          <div className="relative min-h-[500px] lg:min-h-full image-frame">
             <Image
               src="/assest/1.2.jpg"
               alt="Discover the services we offer"
               fill
-              className="object-cover rounded-lg shadow-lg"
+              className="object-cover"
             />
           </div>
           <div>
-            <p className="text-sm uppercase tracking-widest text-muted-foreground">Discover the services we offer</p>
-            <h2 className="font-headline text-4xl md:text-5xl font-bold mt-2 mb-8">Essentials For Your Stay</h2>
+            <p className="eyebrow">Stay details</p>
+            <h2 className="font-headline text-4xl md:text-6xl font-normal mt-2 mb-8">Quiet comforts, considered carefully</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {services.map((service) => (
-                <div key={service.title} className="flex gap-4">
+                <div key={service.title} className="flex gap-4 border-b border-border pb-6">
                   <div>{service.icon}</div>
                   <div>
                     <h3 className="font-headline text-xl font-semibold">{service.title}</h3>
@@ -189,12 +212,13 @@ export default function Home() {
       </section>
 
 
-      {/* Featured Rooms Section */}
-      <section className="py-16 md:py-24 bg-secondary/30">
+      {/* Featured Treehouses Section */}
+      <section className="luxury-section bg-secondary/40">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="font-headline text-3xl md:text-4xl font-bold">Featured Rooms</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
+            <p className="eyebrow">Only two, never crowded</p>
+            <h2 className="font-headline text-4xl md:text-6xl font-normal mt-3">Choose your treehouse</h2>
+            <p className="mt-5 max-w-2xl mx-auto text-muted-foreground leading-8">
               Discover our two signature treehouses, designed for comfort and immersion in nature.
             </p>
           </div>
@@ -204,9 +228,9 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-12 text-center">
-            <Button asChild size="lg" variant="link" className="text-primary hover:text-primary/80">
+            <Button asChild size="lg" variant="link" className="text-primary hover:text-accent">
               <Link href="/rooms">
-                View All Rooms <ArrowRight className="ml-2 h-5 w-5" />
+                View Both Treehouses <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </div>
@@ -228,11 +252,11 @@ export default function Home() {
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
           <div className="max-w-3xl mx-auto">
             <GuestIcon />
-            <p className="mt-4 text-sm uppercase tracking-widest">Voice from our guests</p>
-            <blockquote className="mt-6 font-headline text-2xl md:text-3xl font-medium">
-              "Cannot say enough good things about this hotel! We thoroughly enjoyed our stay in this little serene beach location. Stone huts were lovely, ours had an outdoor living room overlooking the shaded pool. Food was great at both restaurants and breakfast was included in our price. Staff was great and very friendly."
+            <p className="mt-4 text-sm uppercase tracking-widest">Guest notes</p>
+            <blockquote className="mt-6 font-headline text-2xl md:text-4xl font-normal leading-snug">
+              "Staying in this treehouse was an unforgettable eco-tourism experience. The natural surroundings create a peaceful environment."
             </blockquote>
-            <p className="mt-6 font-semibold">Robert G. - Tripadvisor</p>
+            <p className="mt-6 font-semibold">Recent Booking.com guest</p>
             <div className="mt-2 flex justify-center gap-1 text-yellow-400">
               {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
             </div>
@@ -241,18 +265,19 @@ export default function Home() {
       </section>
 
       {/* About/CTA Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="luxury-section bg-background">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="font-headline text-3xl md:text-4xl font-bold">Your Gateway to Serenity</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Nestled amidst lush greenery, Vercour Sigiriya offers a unique blend of rustic charm and modern comfort. Our commitment to eco-friendly practices ensures a stay that's not only relaxing but also in harmony with the environment.
+            <p className="eyebrow">A slower way to stay</p>
+            <h2 className="mt-3 font-headline text-4xl md:text-6xl font-normal">Wake above the garden, then wander into ancient Sigiriya</h2>
+            <p className="mt-5 text-lg leading-8 text-muted-foreground">
+              This is not a big resort. It is a quiet two-treehouse escape with space to breathe, a garden to wander, and easy access to the rock fortresses, village life, and wildlife routes that make Sigiriya unforgettable.
             </p>
             <Button asChild size="lg" className="mt-8">
-              <Link href="/about">Learn More About Us</Link>
+              <Link href="/about">Our Story</Link>
             </Button>
           </div>
-          <div className="rounded-lg overflow-hidden shadow-lg">
+          <div className="image-frame">
             <Image
               src="/assest/1.jpg"
               alt="Your Gateway to Serenity"
@@ -265,15 +290,16 @@ export default function Home() {
       </section>
 
       {/* Map Section */}
-      <section className="py-16 md:py-24 bg-secondary/30">
+      <section className="luxury-section bg-secondary/40">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="font-headline text-3xl md:text-4xl font-bold">Our Location</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
+            <p className="eyebrow">Location</p>
+            <h2 className="mt-3 font-headline text-4xl md:text-6xl font-normal">Close to the icons, tucked into quiet</h2>
+            <p className="mt-5 max-w-2xl mx-auto text-muted-foreground leading-8">
               Find us at the heart of Sri Lanka's cultural triangle, a perfect base to explore the wonders of Sigiriya.
             </p>
           </div>
-          <Card>
+          <Card className="overflow-hidden border-primary/10 shadow-2xl">
             <CardContent className="p-2 md:p-4">
               <MapEmbed />
             </CardContent>

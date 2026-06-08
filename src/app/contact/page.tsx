@@ -24,7 +24,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative h-[50vh] w-full">
+      <section className="relative h-[60vh] w-full">
         {heroImage && (
             <Image
               src={heroImage.imageUrl}
@@ -35,13 +35,14 @@ export default function ContactPage() {
               data-ai-hint={heroImage.imageHint}
             />
         )}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/40 to-primary/90" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
-          <h1 className="font-headline text-4xl md:text-6xl font-bold">
+          <p className="eyebrow text-white/80">Reserve the canopy</p>
+          <h1 className="mt-4 font-headline text-5xl font-normal md:text-7xl">
             Contact & Booking
           </h1>
-          <p className="mt-4 max-w-2xl text-lg">
-            We're excited to welcome you. Reach out for any questions or to start planning your stay.
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85">
+            Ask about dates, treehouse fit, airport pickup, and experiences around Sigiriya.
           </p>
         </div>
       </section>
@@ -52,7 +53,7 @@ export default function ContactPage() {
             
           {/* Contact Form */}
           <div className="lg:col-span-3">
-            <Card>
+            <Card className="border-primary/10 shadow-xl">
               <CardHeader>
                 <CardTitle className="font-headline text-2xl">Send Us an Inquiry</CardTitle>
                 <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
@@ -65,7 +66,7 @@ export default function ContactPage() {
 
           {/* Contact Info & Booking Links */}
           <div className="lg:col-span-2 space-y-8">
-            <Card>
+            <Card className="border-primary/10 shadow-xl">
               <CardHeader>
                 <CardTitle className="font-headline text-2xl">Contact Details</CardTitle>
               </CardHeader>
@@ -79,7 +80,7 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="canopy-panel">
               <CardHeader>
                 <CardTitle className="font-headline text-2xl">Book via Partners</CardTitle>
                 <CardDescription>Book instantly through our trusted partners.</CardDescription>
@@ -103,7 +104,8 @@ export default function ContactPage() {
       {/* Map Section */}
       <section className="w-full">
         <div className="container mx-auto px-4 mb-8">
-            <h2 className="text-center font-headline text-3xl font-bold">How to Find Us</h2>
+            <p className="eyebrow text-center">Map</p>
+            <h2 className="mt-3 text-center font-headline text-4xl font-normal md:text-5xl">How to Find Us</h2>
         </div>
         <MapEmbed />
       </section>

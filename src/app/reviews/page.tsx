@@ -14,7 +14,7 @@ export default function ReviewsPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative h-[50vh] w-full">
+      <section className="relative h-[60vh] w-full">
         {heroImage && (
             <Image
               src={heroImage.imageUrl}
@@ -25,19 +25,24 @@ export default function ReviewsPage() {
               data-ai-hint={heroImage.imageHint}
             />
         )}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-primary/90" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
-          <h1 className="font-headline text-4xl md:text-6xl font-bold">
+          <p className="eyebrow text-white/80">Guest notes</p>
+          <h1 className="mt-4 font-headline text-5xl font-normal md:text-7xl">
             Words From Our Guests
           </h1>
-          <p className="mt-4 max-w-2xl text-lg">
-            We are humbled by the kind words from our guests who have made Vercour Sigiriya their home away from home.
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85">
+            Travelers come for the treehouse novelty, then remember the calm, the garden, and the warmth.
           </p>
         </div>
       </section>
 
       {/* Reviews Grid */}
       <div className="container mx-auto px-4 py-16 md:py-24">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <p className="eyebrow">Real stays</p>
+          <h2 className="mt-3 font-headline text-4xl font-normal md:text-6xl">What guests notice first</h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reviews.map((review) => (
             <ReviewCard key={review.id} review={review} />

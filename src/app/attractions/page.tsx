@@ -14,7 +14,7 @@ export default function AttractionsPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative h-screen w-full">
+      <section className="relative min-h-[70vh] w-full">
         {heroImage && (
             <Image
               src={heroImage.imageUrl}
@@ -25,19 +25,24 @@ export default function AttractionsPage() {
               data-ai-hint={heroImage.imageHint}
             />
         )}
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
-          <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-normal tracking-wider">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-primary/90" />
+        <div className="relative z-10 flex min-h-[70vh] flex-col items-center justify-center text-center text-white p-4">
+          <p className="eyebrow text-white/80">Beyond the balcony</p>
+          <h1 className="mt-4 font-headline text-5xl font-normal md:text-7xl">
             Things To Do
           </h1>
-          <p className="mt-4 max-w-2xl text-md md:text-lg tracking-wide">
-            Discover the rich history and natural wonders that await you in and around Sigiriya.
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85">
+            Ancient rock fortresses, wildlife routes, village experiences, and sky-high views are all within reach.
           </p>
         </div>
       </section>
 
       {/* Attractions List */}
       <div className="container mx-auto px-4 py-16 md:py-24">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <p className="eyebrow">Explore from Vercour</p>
+          <h2 className="mt-3 font-headline text-4xl font-normal md:text-6xl">A quiet base for unforgettable days</h2>
+        </div>
         <div className="max-w-4xl mx-auto space-y-12">
           {attractions.map((attraction) => (
             <AttractionCard key={attraction.id} attraction={attraction} />

@@ -41,7 +41,7 @@ export default function GalleryPage() {
   return (
     <>
     {/* Page Header */}
-    <section className="relative h-screen w-full">
+    <section className="relative min-h-[70vh] w-full">
         {heroImage && (
           <Image
             src={heroImage.src}
@@ -51,24 +51,29 @@ export default function GalleryPage() {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
-          <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-normal tracking-wider">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-primary/90" />
+        <div className="relative z-10 flex min-h-[70vh] flex-col items-center justify-center text-center text-white p-4">
+          <p className="eyebrow text-white/80">Canopy moments</p>
+          <h1 className="mt-4 font-headline text-5xl font-normal md:text-7xl">
             Gallery
           </h1>
-          <p className="mt-4 max-w-2xl text-md md:text-lg tracking-wide">
-            A glimpse into the serene beauty of Vercour Sigiriya and its surroundings.
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85">
+            Treehouse textures, garden light, quiet corners, and the natural beauty around Vercour Sigiriya.
           </p>
         </div>
       </section>
 
     {/* Gallery Grid */}
     <div className="container mx-auto px-4 py-16 md:py-24">
+      <div className="mx-auto mb-12 max-w-3xl text-center">
+        <p className="eyebrow">The atmosphere</p>
+        <h2 className="mt-3 font-headline text-4xl font-normal md:text-6xl">A closer look at the stay</h2>
+      </div>
       <Dialog open={!!selectedImage} onOpenChange={(isOpen) => !isOpen && setSelectedImage(null)}>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {galleryAssets.map((image) => (
             <DialogTrigger asChild key={image.id} onClick={() => setSelectedImage(image)}>
-              <Card className="overflow-hidden cursor-pointer group transition-all hover:shadow-xl hover:-translate-y-1">
+              <Card className="overflow-hidden cursor-pointer group border-primary/10 transition-all hover:-translate-y-1 hover:shadow-2xl">
                 <CardContent className="p-0">
                   <div className="relative h-80">
                     <Image
