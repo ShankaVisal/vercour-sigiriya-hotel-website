@@ -3,7 +3,6 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
 import { Leaf, MapPin, Heart } from 'lucide-react';
 import type { Metadata } from 'next';
-import { DynamicContentGenerator } from '@/components/dynamic-content-generator';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -110,8 +109,6 @@ export default function AboutPage() {
             ))}
           </div>
         </section>
-
-        <DynamicContentGenerator sectionName="About Us" />
 
       </div>
     </>

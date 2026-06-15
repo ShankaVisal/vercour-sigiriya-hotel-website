@@ -6,7 +6,7 @@ export const navLinks: NavLink[] = [
   { href: '/rooms', label: 'Treehouses' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/about', label: 'About Us' },
-  { href: '/nature-garden', label: 'Nature Garden' },
+  { href: '/the-rhythm-of-a-village', label: 'The Rhythm of a Village' },
   { href: '/attractions', label: 'Things To Do' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/reviews', label: 'Reviews' },
